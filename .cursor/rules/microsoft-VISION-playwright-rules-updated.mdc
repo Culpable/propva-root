@@ -79,7 +79,8 @@ mcp_playwright_vision_browser_navigate:
 mcp_playwright_vision_browser_screen_capture:
   Title: Take a screenshot
   Description: Take a screenshot of the current page
-  Parameters: None
+  Parameters:
+    - random_string (string): Dummy parameter required for this tool (you can use any string value)
   Read-only: true
 
 mcp_playwright_vision_browser_press_key:
@@ -101,7 +102,8 @@ mcp_playwright_vision_browser_screen_click:
 mcp_playwright_vision_browser_console_messages:
   Title: Get console messages
   Description: Returns all console messages. Backend errors are automatically forwarded to the browser console as messages that begin with "[Backend Error] …".
-  Parameters: None
+  Parameters:
+    - random_string (string): Dummy parameter required for this tool (you can use any string value)
   Read-only: true
 
 mcp_playwright_vision_browser_resize:
@@ -123,7 +125,8 @@ mcp_playwright_vision_browser_handle_dialog:
 mcp_playwright_vision_browser_network_requests:
   Title: Get network requests
   Description: Returns all network requests since loading the page
-  Parameters: None
+  Parameters:
+    - random_string (string): Dummy parameter required for this tool (you can use any string value)
   Read-only: true
 
 mcp_playwright_vision_browser_screen_move_mouse:
