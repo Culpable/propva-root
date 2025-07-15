@@ -1,0 +1,156 @@
+---
+description: Use these for ALL queries related to playwright. You MUST use these rules when using playwrite.
+alwaysApply: false
+---
+You MUST follow these rules when using playwright:
+<playwright_rules>
+IMPORTANT:
+- ALWAYS ASSUME the app is already running on localhost on port 3000
+- DO NOT kill the server or start it manually; it is already running and hot reloads after changes are made to files
+- Start by navigating to the home page at http://localhost:3000/ (mcp_playwright_vision_browser_navigate)
+- If you navigate to a page and it's not working, wait 3 seconds for the page to load via `mcp_playwright_browser_wait_for`
+
+Authentication:
+<signing_in>
+The app automatically logs in during Playwright tests (bypass auth enabled). You'll be instantly authenticated as demo@propva.com - no login required. If you unexpectedly see a login screen, navigate to http://localhost:3000/ again.
+</signing_in>
+
+Here is how to take screenshots:
+<screenshot_instructions>
+1. Navigate to the page you want to screenshot using the `mcp_playwright_vision_browser_navigate` tool call.
+2. Take the screenshot using the `mcp_playwright_vision_browser_screen_capture` tool call.
+</screenshot_instructions>
+
+Here is how you check your work after taking a screenshot:
+<checking_your_work>
+🚨 **CRITICAL REQUIREMENT**: You MUST follow the Mandatory Screenshot Description Protocol detailed in [screenshot-description-enforcement.mdc](mdc:.cursor/rules/screenshot-description-enforcement.mdc). Failure to provide detailed analysis using the required template will result in task rejection.
+
+1. After taking a screenshot, you MUST use the structured analysis template from the enforcement rule. Simple responses like "looks good" are STRICTLY FORBIDDEN.
+2. Provide a targeted description following the 6-section analysis format:
+   a. Target Element Assessment (ONLY elements relevant to current task)
+   b. Text Content Verification (ONLY text being tested/modified)
+   c. Visual Measurements (ONLY for elements being verified)
+   d. Task Completion Check (with ✅/❌ indicators and evidence)
+   e. Issues Found (specific problems or confirmation with evidence)
+   f. Next Steps (specific actions or completion confirmation)
+3. Your analysis should focus ONLY on:
+   - Elements directly related to the user's request
+   - Components that were or should be modified
+   - Areas where issues are visible
+   - Interactive elements being tested
+4. If the desired elements are not visible in the screenshot:
+   a. First check if scrolling is needed: Use the `mcp_playwright_vision_browser_press_key` tool with "PageDown"
+   b. Take a new screenshot using `mcp_playwright_vision_browser_screen_capture`
+   c. If elements appear after scrolling, continue evaluation
+   d. Only proceed to code changes if scrolling doesn't reveal the expected elements
+5. If the screenshot doesn't match the desired state:
+   a. Identify specifically what's incorrect or missing
+   b. Formulate a precise code change to address the issue
+   c. Update the codebase with this change
+   d. ALWAYS perform a hard refresh by navigating to the same URL with a random query parameter: `mcp_playwright_vision_browser_navigate` with URL like "http://localhost:3000/current_path?nocache=" + random timestamp
+   e. Take a new screenshot using `mcp_playwright_vision_browser_screen_capture`
+   f. Return to step 1
+6. Continue this code-screenshot-describe cycle until the application exactly matches the desired state.
+7. Your task is NOT complete until the screenshot confirms all requirements have been implemented correctly. You MUST be precise here: it is not enough to just say "yep looks good". You need to ensure that you're describing the screenshots in sufficient depth in order to discern pertinent discrepancies.
+</checking_your_work>
+
+You MUST adhere to the guidelines below when describing screenshots:
+<screenshot_description_guidelines>
+⚠️ **ENFORCEMENT NOTICE**: These guidelines are MANDATORY. See [screenshot-description-enforcement.mdc](mdc:.cursor/rules/screenshot-description-enforcement.mdc) for the required analysis template and minimum requirements. Lazy descriptions will be rejected.
+
+When describing screenshots, you MUST:
+- Focus ONLY on elements relevant to the current task
+- NEVER say "looks good", "appears correct", or provide generic confirmations
+- ALWAYS use the mandatory 6-section template
+- Provide specific evidence (measurements, hex codes, exact text) for your conclusions
+- Compare visible state to expected state with clear pass/fail assessments
+- Skip irrelevant UI elements entirely - don't describe the entire interface
+
+Remember: Quality over quantity. A focused 200-word analysis of relevant elements is better than a 500-word description of the entire screen.
+</screenshot_description_guidelines>
+
+API documentation for frequently used calls:
+<api_docs>
+mcp_playwright_vision_browser_navigate:
+  Description: Navigate to a URL
+  Parameters:
+    - url (string): The URL to navigate to
+
+mcp_playwright_vision_browser_screen_capture:
+  Title: Take a screenshot
+  Description: Take a screenshot of the current page
+  Parameters: None
+  Read-only: true
+
+mcp_playwright_vision_browser_press_key:
+  Title: Press a key
+  Description: Press a key on the keyboard
+  Parameters:
+    - key (string): Name of the key to press or a character to generate, such as ArrowLeft or a
+  Read-only: false
+
+mcp_playwright_vision_browser_screen_click:
+  Title: Click
+  Description: Click left mouse button
+  Parameters:
+    - element (string): Human-readable element description used to obtain permission to interact with the element
+    - x (number): X coordinate
+    - y (number): Y coordinate
+  Read-only: false
+
+mcp_playwright_vision_browser_console_messages:
+  Title: Get console messages
+  Description: Returns all console messages. Backend errors are automatically forwarded to the browser console as messages that begin with "[Backend Error] …".
+  Parameters: None
+  Read-only: true
+
+mcp_playwright_vision_browser_resize:
+  Title: Resize browser window
+  Description: Resize the browser window
+  Parameters:
+    - width (number): Width of the browser window
+    - height (number): Height of the browser window
+  Read-only: false
+
+mcp_playwright_vision_browser_handle_dialog:
+  Title: Handle a dialog
+  Description: Handle a dialog
+  Parameters:
+    - accept (boolean): Whether to accept the dialog.
+    - promptText (string, optional): The text of the prompt in case of a prompt dialog.
+  Read-only: false
+
+mcp_playwright_vision_browser_network_requests:
+  Title: Get network requests
+  Description: Returns all network requests since loading the page
+  Parameters: None
+  Read-only: true
+
+mcp_playwright_vision_browser_screen_move_mouse:
+  Title: Move mouse
+  Description: Move mouse to a given position
+  Parameters:
+    - element (string): Human-readable element description used to obtain permission to interact with the element
+    - x (number): X coordinate
+    - y (number): Y coordinate
+  Read-only: true
+
+mcp_playwright_vision_browser_screen_drag:
+  Title: Drag mouse
+  Description: Drag left mouse button
+  Parameters:
+    - element (string): Human-readable element description used to obtain permission to interact with the element
+    - startX (number): Start X coordinate
+    - startY (number): Start Y coordinate
+    - endX (number): End X coordinate
+    - endY (number): End Y coordinate
+  Read-only: false
+
+mcp_playwright_browser_wait_for:
+  Description: Wait for a specified time in seconds
+  Parameters:
+    - time (number): Time to wait in seconds
+</api_docs>
+
+Remember: the app is already running at localhost:3000. DO NOT kill the server or start it manually; it is already running and hot reloads after changes are made to files.
+</playwright_rules>
