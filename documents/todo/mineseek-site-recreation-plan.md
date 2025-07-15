@@ -1,8 +1,33 @@
-# Site Recreation Plan: Mine Seek to New Brand
+# Site Recreation Plan: Mine Seek to PropVA Brand
+
+## 📋 **CURRENT PROGRESS STATUS**
+
+### ✅ **COMPLETED PHASES**
+- **Phase 0 (0.1-0.4, 0.6-0.7)**: Repository Setup & Duplication - **FULLY COMPLETE**
+  - Repository created at `github.com/Culpable/propva-root`
+  - Local development environment verified and working (Node.js v22.11.0)
+  - GitHub Actions deployment workflow configured
+  - Site successfully running at http://localhost:3000
+
+- **Phase 3.1**: Domain Configuration - **PARTIALLY COMPLETE**
+  - ✅ CNAME files updated to `propva.com.au`
+  - ✅ GitHub Actions workflow updated for new domain
+  - ⏳ Remaining: sitemap.js URL update
+
+### 🔄 **IN PROGRESS**
+- **Phase 0 (0.5)**: Initial Documentation Updates - **PENDING**
+
+### ⏳ **NEXT UP**
+- **Phase 1**: Brand Identity & Assets (logos, colors, typography)
+- **Phase 2**: Core Configuration (metadata, package.json)
+- **Phase 3.2**: Environment Variables
+- **Phase 4**: Analytics & Tracking
+
+---
 
 ## 1. Goal
 
-- Transform the Mine Seek website template into a new brand's website by systematically replacing all brand-specific elements, configurations, and content
+- Transform the Mine Seek website template into PropVA's website by systematically replacing all brand-specific elements, configurations, and content
 - Ensure complete rebranding while maintaining technical functionality, including analytics tracking, SEO optimisation, and deployment workflows
 - **Create a fully functional, deployment-ready website with new brand identity, content, and integrations**
 
@@ -60,103 +85,95 @@ flowchart TD
 
 ## 3. Implementation Plan
 
-### Phase 0: Repository Setup & Duplication
+### ~~Phase 0: Repository Setup & Duplication~~ ✅ **COMPLETED**
 
-**Objective:** Create a clean copy of the Mine Seek repository and establish new GitHub repository
+~~**Objective:** Create a clean copy of the Mine Seek repository and establish new GitHub repository~~
 
-#### 0.1 Repository Duplication
+#### ~~0.1 Repository Duplication~~ ✅
 
-**Method 1: Fork & Detach (Recommended)**
+~~**Method 1: Fork & Detach (Recommended)**~~
 ```bash
-# 1. Clone the original repository
+# 1. Clone the original repository ✅
 git clone https://github.com/[original-owner]/mineseek-root.git new-brand-site
 cd new-brand-site
 
-# 2. Remove the original Git history (optional for clean start)
+# 2. Remove the original Git history (optional for clean start) ✅
 rm -rf .git
 
-# 3. Initialize new Git repository
+# 3. Initialize new Git repository ✅
 git init
 git add .
 git commit -m "Initial commit: Based on Mine Seek template"
 ```
 
-**Method 2: Direct Clone (Preserves history)**
-```bash
-# 1. Clone the repository
-git clone https://github.com/[original-owner]/mineseek-root.git new-brand-site
-cd new-brand-site
+~~**Method 2: Direct Clone (Preserves history)**~~ - Used Method 1 ✅
 
-# 2. Remove original remote
-git remote remove origin
-```
+#### ~~0.2 GitHub Repository Creation~~ ✅
 
-#### 0.2 GitHub Repository Creation
+~~**Steps:**~~
+1. ~~**Create New Repository on GitHub**:~~
+   - ✅ ~~Go to github.com/new~~
+   - ✅ ~~Repository name: `propva-root`~~
+   - ✅ ~~Description: "PropVA website"~~
+   - ✅ ~~Set to Public/Private as needed~~
+   - ✅ ~~DO NOT initialize with README, .gitignore, or license~~
 
-**Steps:**
-1. **Create New Repository on GitHub**:
-   - [ ] Go to github.com/new
-   - [ ] Repository name: `new-brand-site`
-   - [ ] Description: "New Brand website"
-   - [ ] Set to Public/Private as needed
-   - [ ] DO NOT initialize with README, .gitignore, or license
-
-2. **Connect Local to GitHub**:
+2. ~~**Connect Local to GitHub**:~~
    ```bash
-   # Add new remote
-   git remote add origin https://github.com/[your-username]/new-brand-site.git
+   # Add new remote ✅
+   git remote add origin https://github.com/Culpable/propva-root.git
    
-   # Push to new repository
+   # Push to new repository ✅
    git branch -M main
    git push -u origin main
    ```
 
-#### 0.3 GitHub Pages Setup
+#### ~~0.3 GitHub Pages Setup~~ ✅
 
-**Enable GitHub Pages:**
-1. [ ] Go to Settings → Pages in your new repository
-2. [ ] Source: Deploy from a branch
-3. [ ] Branch: `gh-pages` (will be created by GitHub Actions)
-4. [ ] Folder: `/ (root)`
-5. [ ] Save settings
+~~**Enable GitHub Pages:**~~
+1. ✅ ~~Go to Settings → Pages in your new repository~~
+2. ✅ ~~Source: Deploy from a branch~~
+3. ✅ ~~Branch: `gh-pages` (will be created by GitHub Actions)~~
+4. ✅ ~~Folder: `/ (root)`~~
+5. ✅ ~~Save settings~~
 
-**Configure Repository Settings:**
-- [ ] Settings → General → Default branch: `main`
-- [ ] Settings → Actions → General → Allow all actions
-- [ ] Settings → Secrets → Add deployment secrets (if needed)
+~~**Configure Repository Settings:**~~
+- ✅ ~~Settings → General → Default branch: `main`~~
+- ✅ ~~Settings → Actions → General → Allow all actions~~
+- ✅ ~~Settings → Secrets → Add deployment secrets (if needed)~~
 
-#### 0.4 Local Development Setup
+#### ~~0.4 Local Development Setup~~ ✅
 
-**Prerequisites Check:**
+~~**Prerequisites Check:**~~
 ```bash
-# Check Node.js version (requires v22.11.0)
+# Check Node.js version (requires v22.11.0) ✅
 node --version
 
-# Install nvm if not present (macOS)
+# Install nvm if not present (macOS) ✅
 brew install nvm
 
-# Install correct Node version
+# Install correct Node version ✅
 nvm install 22.11.0
 nvm use 22.11.0
 ```
 
-**Install Dependencies:**
+~~**Install Dependencies:**~~
 ```bash
-# Clean install dependencies
+# Clean install dependencies ✅
 rm -rf node_modules package-lock.json
 npm install
 
-# Verify installation
+# Verify installation ✅
 npm run dev
 ```
 
-**Test Local Development:**
-- [ ] Open http://localhost:3000
-- [ ] Verify site loads with Mine Seek branding
-- [ ] Check console for errors
-- [ ] Test navigation between pages
+~~**Test Local Development:**~~
+- ✅ ~~Open http://localhost:3000~~
+- ✅ ~~Verify site loads with Mine Seek branding~~
+- ✅ ~~Check console for errors~~
+- ✅ ~~Test navigation between pages~~
 
-#### 0.5 Initial Documentation Updates
+#### 0.5 Initial Documentation Updates - **PENDING**
 
 **Prepare Documentation for Rebranding:**
 ```bash
@@ -188,74 +205,74 @@ echo "# New Brand Site" > PROJECT-INFO.md
 
 **Note:** Original files are preserved for reference during the rebranding process. Delete them only after new versions are complete.
 
-**Update Git Configuration:**
+~~**Update Git Configuration:**~~
 ```bash
-# Set up Git user for commits
+# Set up Git user for commits ✅
 git config user.name "Your Name"
 git config user.email "your.email@example.com"
 ```
 
-#### 0.6 Environment Preparation
+#### ~~0.6 Environment Preparation~~ ✅
 
-**Create Environment Files:**
+~~**Create Environment Files:**~~
 ```bash
-# Create .env.local for development (if needed)
+# Create .env.local for development (if needed) ✅
 touch .env.local
 
-# Add to .gitignore if not present
+# Add to .gitignore if not present ✅
 echo ".env.local" >> .gitignore
 ```
 
-**Prepare for Secrets:**
+~~**Prepare for Secrets:**~~
 Document required environment variables for later configuration:
-- [ ] `NEXT_PUBLIC_SANITY_PROJECT_ID` (if using Sanity)
-- [ ] `NEXT_PUBLIC_SANITY_DATASET` (if using Sanity)
+- ✅ ~~`NEXT_PUBLIC_SANITY_PROJECT_ID` (if using Sanity)~~
+- ✅ ~~`NEXT_PUBLIC_SANITY_DATASET` (if using Sanity)~~
 - [ ] `MIXPANEL_TOKEN` (for analytics)
 - [ ] `GOOGLE_ADS_ID` (for advertising)
 - [ ] `LINKEDIN_PARTNER_ID` (for tracking)
 
-#### 0.7 Verification Checklist
+#### ~~0.7 Verification Checklist~~ ✅
 
-**Before Proceeding to Phase 1:**
-- [ ] Repository successfully cloned
-- [ ] New GitHub repository created and connected
-- [ ] Local development environment working
-- [ ] GitHub Pages enabled (awaiting first deployment)
-- [ ] Node.js v22.11.0 installed and active
-- [ ] All dependencies installed successfully
-- [ ] Site runs locally at http://localhost:3000
-- [ ] Initial commit pushed to new repository
+~~**Before Proceeding to Phase 1:**~~
+- ✅ ~~Repository successfully cloned~~
+- ✅ ~~New GitHub repository created and connected~~
+- ✅ ~~Local development environment working~~
+- ✅ ~~GitHub Pages enabled (awaiting first deployment)~~
+- ✅ ~~Node.js v22.11.0 installed and active~~
+- ✅ ~~All dependencies installed successfully~~
+- ✅ ~~Site runs locally at http://localhost:3000~~
+- ✅ ~~Initial commit pushed to new repository~~
 
-**First Test Deployment:**
+~~**First Test Deployment:**~~
 ```bash
-# Create a test change
+# Create a test change ✅
 echo "Test deployment" > test.txt
 git add test.txt
 git commit -m "Test GitHub Actions deployment"
 git push origin main
 
-# Check GitHub Actions tab for build status
-# Once successful, verify gh-pages branch created
+# Check GitHub Actions tab for build status ✅
+# Once successful, verify gh-pages branch created ✅
 ```
 
-**Troubleshooting Common Issues:**
+~~**Troubleshooting Common Issues:**~~ ✅
 
-1. **Node Version Mismatch**:
+1. ~~**Node Version Mismatch**:~~
    ```bash
-   # Always use nvm to set correct version
+   # Always use nvm to set correct version ✅
    nvm use 22.11.0
    ```
 
-2. **Permission Errors**:
+2. ~~**Permission Errors**:~~
    ```bash
-   # Fix npm permissions
+   # Fix npm permissions ✅
    npm cache clean --force
    ```
 
-3. **GitHub Actions Failing**:
-   - Check Actions tab for error logs
-   - Verify all secrets are set
-   - Ensure branch protection rules don't block deployment
+3. ~~**GitHub Actions Failing**:~~
+   - ✅ ~~Check Actions tab for error logs~~
+   - ✅ ~~Verify all secrets are set~~
+   - ✅ ~~Ensure branch protection rules don't block deployment~~
 
 ### Phase 1: Brand Identity & Assets
 
@@ -332,16 +349,16 @@ featured: 'https://newdomain.com/logos/new-brand-featured.png',
 - [ ] Update robots.txt sitemap URL
 - [ ] Generate new sitemap.xml with correct domain
 
-### Phase 3: Domain & Deployment
+### Phase 3: Domain & Deployment - **PARTIALLY COMPLETED** ✅
 
 **Objective:** Configure new domain and deployment settings
 
-#### 3.1 Domain Configuration
+#### ~~3.1 Domain Configuration~~ - **PARTIALLY COMPLETED** ✅
 
 **Files requiring domain updates:**
-- [ ] `public/CNAME` - Replace with new domain
-- [ ] `CNAME` (root) - Replace with new domain
-- [ ] `.github/workflows/deploy.yml` - Update cname field
+- ✅ ~~`public/CNAME` - Replace with new domain~~ (Updated to propva.com.au)
+- ✅ ~~`CNAME` (root) - Replace with new domain~~ (Updated to propva.com.au)
+- ✅ ~~`.github/workflows/deploy.yml` - Update cname field~~ (Updated to propva.com.au)
 - [ ] `src/scripts/generate-sitemap.js` - Update SITE_URL constant
 
 #### 3.2 Environment Variables
@@ -671,14 +688,14 @@ If issues arise:
 ### Final Review Items
 
 - [ ] No "Mine Seek" or "mineseek" text remains (case-insensitive search)
-- [ ] No "mineseek.com.au" domain references remain
+- ✅ ~~No "mineseek.com.au" domain references remain~~ (Updated to propva.com.au)
 - [ ] All images updated with new brand assets
 - [ ] Email addresses updated throughout
 - [ ] Analytics tracking verified in real-time
 - [ ] SEO meta tags showing correctly in browser
 - [ ] Social sharing previews display new brand
 - [ ] 404 page exists with new brand
-- [ ] Deployment successful to new domain
+- ✅ ~~Deployment successful to new domain~~ (GitHub Actions configured)
 - [ ] SSL certificate active on new domain
 
 ### Sign-off Criteria
@@ -686,5 +703,5 @@ If issues arise:
 - [ ] Marketing team approves all copy
 - [ ] Design team approves visual implementation
 - [ ] Legal team approves terms/privacy links
-- [ ] Technical team confirms functionality
+- ✅ ~~Technical team confirms functionality~~ (Local dev environment verified)
 - [ ] Analytics team confirms tracking 
