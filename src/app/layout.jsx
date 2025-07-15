@@ -77,25 +77,20 @@ const switzer = localFont({
 
 export const metadata = {
   title: {
-    template: '%s | Mine Seek',
-    default: 'Mine Seek: Accelerate Your Exploration with AI',
+    template: '%s | propva',
+    default: 'Propva: Simplify Your Property Investment Portfolio',
   },
   description:
-    'Mine Seek is helping exploration teams across Australia radically accelerate their geological analysis through AI-powered insights. Find out how agentic AI revolutionises exploration.',
+    'Turn property documents into financial intelligence. Propva uses AI to extract data from statements, calculate ROI, yields & tax for Australian investors.',
   icons: {
     icon: [
       { url: '/favicon.ico', type: 'image/x-icon', sizes: '32x32' },
       { url: '/favicon-96x96.png', type: 'image/png', sizes: '96x96' },
-      { url: '/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
-      { url: '/favicon-16x16.png', type: 'image/png', sizes: '16x16' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
     ],
     apple: [
       { url: '/apple-touch-icon.png', sizes: '180x180' },
     ],
-    maskIcon: {
-      url: '/safari-pinned-tab.svg',
-      color: '#ffffff',
-    },
     manifest: '/site.webmanifest',
   },
   additionalMetaTags: [
@@ -140,7 +135,7 @@ export default function RootLayout({ children }) {
         }}
       />
       
-      <body className="text-gray-950 antialiased">
+      <body className="text-gray-950 antialiased" suppressHydrationWarning>
         <MixpanelProvider />
         {children}
         

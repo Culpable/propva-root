@@ -5,9 +5,9 @@ import { siteImages } from './images'
  * This file defines metadata properties used across the site for SEO and social sharing
  */
 export const siteMetadata = {
-  title: 'Mine Seek - AI-Powered Mining Exploration',
-  description: 'Mine Seek accelerates your path from data to discovery with AI-powered exploration agents. Custom made for Australian mining exploration teams.',
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://mineseek.com.au',
+  title: 'Propva: Simplify Your Property Investment Portfolio',
+  description: 'Turn property documents into financial intelligence. Propva uses AI to extract data from statements, calculate ROI, yields & tax for Australian investors.',
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://propva.com.au',
   // Using the absolute URL directly from siteImages
   ogImage: siteImages.featured,
   twitter: {

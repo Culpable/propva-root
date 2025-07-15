@@ -11,7 +11,7 @@ import { PricingClient } from './pricing-client'
 export const metadata = {
   title: 'Pricing',
   description:
-    'Mining companies across Australia use Mine Seek to accelerate their exploration programmes. Book a demo today.',
+    'Property investors across Australia use Propva to manage their portfolios with crystal-clear financial intelligence. Book a demo today.',
 }
 
 export default function Pricing() {

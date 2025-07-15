@@ -1,6 +1,6 @@
 {
-  "name": "Mine Seek",
-  "short_name": "M.Seek",
+  "name": "propva",
+  "short_name": "propva",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
@@ -15,7 +15,7 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#ffffff",
+  "theme_color": "#dc5e06",
   "background_color": "#ffffff",
   "display": "standalone"
 }
