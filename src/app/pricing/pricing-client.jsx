@@ -7,357 +7,141 @@ import { Container } from '@/components/container'
 import { Footer } from '@/components/footer'
 import { Gradient, GradientBackground } from '@/components/gradient'
 import { Link } from '@/components/link'
-import { LogoCloud } from '@/components/logo-cloud'
 import { Navbar } from '@/components/navbar'
 import { Heading, Lead, Subheading } from '@/components/text'
-import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
+import { Menu, MenuButton, MenuItem, MenuItems, Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
 import {
   CheckIcon,
   ChevronUpDownIcon,
   MinusIcon,
   PlusIcon,
 } from '@heroicons/react/16/solid'
+import { ChevronDownIcon } from '@heroicons/react/24/outline'
 
-const tiers = [
-  {
-    name: 'Starter',
-    slug: 'starter',
-    description: 'Get started with AI-powered geological insights.',
-    priceMonthly: 429,
-    currency: 'AUD',
-    href: '/contact',
-    highlights: [
-      //   { description: 'Up to 5 team members' },
-      { description: 'Process up to 500 documents monthly' },
-      { description: 'Basic geological query augmentation' },
-      { description: 'Standard map visualisation' },
-      { description: 'Agentic AI workflows', disabled: true },
-      { description: 'Custom data integration pipelines', disabled: true },
-      { description: 'Field notes digitisation', disabled: true },
-      { description: 'Custom in-house training', disabled: true },
-    ],
-    features: [
-      //   { section: 'Search', name: 'User accounts', value: 5 },
-      { section: 'Search', name: 'Concurrent searches', value: 1 },
-      { section: 'Processing', name: 'Monthly documents', value: '500' },
-      { section: 'Processing', name: 'Document storage', value: '1,000 GB' },
-      { section: 'AI Features', name: 'Query augmentation', value: 'Basic' },
-      { section: 'AI Features', name: 'Geological image analysis', value: 'Basic' },
-      { section: 'AI Features', name: 'Agentic AI workflows', value: false },
-      { section: 'Analysis', name: 'Map visualisation', value: 'Standard' },
-      { section: 'Analysis', name: 'Field notes digitisation', value: false },
-      { section: 'Support', name: 'Email support', value: true },
-      { section: 'Support', name: 'In-House Training', value: false },
-    ],
-  },
-  {
-    name: 'Growth',
-    slug: 'growth',
-    description: 'Accelerate discoveries with advanced AI tools.',
-    priceMonthly: 829,
-    currency: 'AUD',
-    href: '/contact',
-    highlights: [
-      //   { description: 'Up to 15 team members' },
-      { description: 'Process up to 5,000 documents monthly' },
-      { description: 'Advanced geological query augmentation' },
-      { description: 'Interactive map visualisation' },
-      { description: 'Agentic AI workflows' },
-      { description: 'Custom data integration pipelines', disabled: false },
-      { description: 'Field notes digitisation', disabled: true },
-      { description: 'Custom in-house training', disabled: true },
-    ],
-    features: [
-      //   { section: 'Search', name: 'User accounts', value: 15 },
-      { section: 'Search', name: 'Concurrent searches', value: 5 },
-      { section: 'Processing', name: 'Monthly documents', value: '5,000' },
-      { section: 'Processing', name: 'Document storage', value: '10,000 GB' },
-      { section: 'AI Features', name: 'Query augmentation', value: 'Advanced' },
-      { section: 'AI Features', name: 'Geological image analysis', value: 'Advanced' },
-      { section: 'AI Features', name: 'Agentic AI workflows', value: 'Standard' },
-      { section: 'Analysis', name: 'Map visualisation', value: 'Interactive' },
-      { section: 'Analysis', name: 'Field notes digitisation', value: false },
-      { section: 'Support', name: 'Email support', value: true },
-      { section: 'Support', name: 'In-House Training', value: false },
-    ],
-  },
-  {
-    name: 'Enterprise',
-    slug: 'enterprise',
-    description: 'Complete AI solution for frontier exploration teams.',
-    priceMonthly: null,
-    priceLabel: 'Custom',
-    currency: 'AUD',
-    href: '/contact',
-    highlights: [
-      //   { description: 'Unlimited team members' },
-      { description: 'Unlimited document processing' },
-      { description: 'Advanced geological query augmentation' },
-      { description: 'Interactive map visualisation' },
-      { description: 'Customised agentic AI workflows' },
-      { description: 'Custom data integration pipelines' },
-      { description: 'Field notes digitisation' },
-      { description: 'Custom in-house training' },
-    ],
-    features: [
-      //   { section: 'Search', name: 'User accounts', value: 'Unlimited' },
-      { section: 'Search', name: 'Concurrent searches', value: 'Unlimited' },
-      { section: 'Processing', name: 'Monthly documents', value: 'Unlimited' },
-      { section: 'Processing', name: 'Document storage', value: 'Unlimited' },
-      { section: 'Processing', name: 'Private Data Integration', value: true },
-      { section: 'AI Features', name: 'Query augmentation', value: 'Custom' },
-      { section: 'AI Features', name: 'Geological image analysis', value: 'Custom' },
-      { section: 'AI Features', name: 'Agentic AI workflows', value: 'Custom' },
-      { section: 'Analysis', name: 'Map visualisation', value: 'Interactive' },
-      { section: 'Analysis', name: 'Field notes digitisation', value: true },
-      { section: 'Support', name: 'Dedicated support', value: true },
-      { section: 'Support', name: 'Email support', value: true },
-      { section: 'Support', name: 'In-House Training', value: true },
-      { section: 'Support', name: 'In-house training', value: true },
-    ],
-  },
-]
+const tier = {
+  name: 'Professional',
+  description: 'Complete property portfolio management for serious investors.',
+  priceMonthly: 19,
+  currency: 'AUD',
+  href: 'https://app.propva.com.au/',
+  highlights: [
+    { description: 'Track unlimited properties' },
+    { description: 'Automatic document extraction with AI' },
+    { description: 'Real-time ROI & yield calculations' },
+    { description: 'Financial year reporting & tax summaries' },
+    { description: 'Multi-property comparative analysis' },
+    { description: 'Custom depreciation schedules' },
+    { description: 'Accountant portal access' },
+    { description: 'Priority support & onboarding' },
+  ],
+  features: [
+    { section: 'Properties', name: 'Properties tracked', value: 'Unlimited' },
+    { section: 'Properties', name: 'Document uploads/month', value: 'Unlimited' },
+    { section: 'Properties', name: 'Multiple portfolios', value: true },
+    { section: 'Financial', name: 'ROI & yield tracking', value: true },
+    { section: 'Financial', name: 'Expense categorisation', value: 'Automatic + Custom rules' },
+    { section: 'Financial', name: 'Tax deduction flagging', value: true },
+    { section: 'Financial', name: 'Multi-property analysis', value: true },
+    { section: 'Reporting', name: 'Financial year summaries', value: true },
+    { section: 'Reporting', name: 'CSV export', value: true },
+    { section: 'Reporting', name: 'Accountant-ready PDFs', value: true },
+    { section: 'Reporting', name: 'Custom report builder', value: true },
+    { section: 'Support', name: 'Email support', value: true },
+    { section: 'Support', name: 'Priority support', value: true },
+    { section: 'Support', name: 'Onboarding assistance', value: true },
+  ],
+}
 
 function Header() {
   return (
     <Container className="mt-16">
-      <Subheading>Custom solutions</Subheading>
-      <Heading as="h1">Pricing plans for teams of all sizes.</Heading>
-      <Lead className="mt-6 max-w-3xl">
-        Mining companies across Australia use Mine Seek to accelerate their exploration. Custom plans to suit your needs.
+      <Subheading className="text-center">Simple, transparent pricing</Subheading>
+      <Heading as="h1" className="text-center mt-2">One plan. Everything included.</Heading>
+      <Lead className="mt-6 max-w-3xl mx-auto text-center">
+        Transform your property investment chaos into crystal-clear financial intelligence. 
+        Start with our 7-day free trial—no credit card required.
       </Lead>
     </Container>
   )
 }
 
-function CustomBanner() {
-  return (
-    <div className="-m-2 grid grid-cols-1 rounded-4xl mx-auto max-w-4xl mt-20 shadow-[inset_0_0_2px_1px_#ffffff4d] ring-1 ring-black/5">
-      <div className="grid grid-cols-1 rounded-4xl p-2 shadow-md shadow-black/5">
-        <div className="rounded-3xl bg-white p-10 pb-9 shadow-2xl ring-1 ring-black/5 text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-950">Can’t find the perfect fit? We’ll create one.</h2>
-          <p className="mt-3 text-lg text-gray-600">Custom plans tailored to your exploration team’s specific needs</p>
-          <Button href="/contact" className="mt-6">Contact Us</Button>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-function PricingCards() {
+function HeroPricingCard() {
   return (
     <div className="relative py-24">
-      <Gradient className="absolute inset-x-2 bottom-0 top-48 rounded-4xl ring-1 ring-inset ring-black/5" />
+      {/* Background gradient */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-x-0 top-0 h-96 bg-gradient-to-b from-gray-50 to-white" />
+        <Gradient className="absolute inset-x-2 top-48 bottom-0 rounded-4xl ring-1 ring-inset ring-black/5" />
+      </div>
+      
       <Container className="relative">
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-          {tiers.map((tier, tierIndex) => (
-            <PricingCard key={tierIndex} tier={tier} />
-          ))}
+        {/* Single centered pricing card */}
+        <div className="mx-auto max-w-2xl">
+          <div className="-m-2 grid grid-cols-1 rounded-4xl shadow-[inset_0_0_2px_1px_#ffffff4d] ring-1 ring-black/5">
+            <div className="grid grid-cols-1 rounded-4xl p-2 shadow-md shadow-black/5">
+              <div className="rounded-3xl bg-white p-10 pb-9 shadow-2xl ring-1 ring-black/5">
+                {/* Price section */}
+                <div className="text-center">
+                  <div className="flex items-center justify-center gap-4">
+                    <div className="text-6xl font-bold text-gray-950">
+                      ${tier.priceMonthly}
+                    </div>
+                    <div className="text-sm/5 text-gray-950/75 text-left">
+                      <p>AUD/user</p>
+                      <p>per month</p>
+                      <p className="text-xs">(inc. GST)</p>
+                    </div>
+                  </div>
+                  <p className="mt-6 text-lg text-gray-950/75">{tier.description}</p>
+                </div>
+
+                {/* CTA Button */}
+                <div className="mt-8 flex justify-center">
+                  <Button href={tier.href} className="px-8">
+                    Start Your Free Trial
+                  </Button>
+                </div>
+
+                {/* Features list - 2 columns on desktop */}
+                <div className="mt-12">
+                  <h3 className="text-sm/6 font-semibold text-gray-950 text-center mb-6">
+                    Everything you need to manage your portfolio:
+                  </h3>
+                  <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-3">
+                    {tier.highlights.map((props, featureIndex) => (
+                      <FeatureItem key={featureIndex} {...props} />
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Trust badges */}
+                <div className="mt-12 border-t border-gray-200 pt-8">
+                  <div className="flex flex-col items-center gap-4">
+                    <p className="text-sm text-gray-600">
+                      Join 1,000+ property investors across Australia
+                    </p>
+                    <div className="flex items-center gap-8">
+                      <div className="text-center">
+                        <p className="text-2xl font-semibold text-gray-950">$2.3B+</p>
+                        <p className="text-sm text-gray-600">Properties tracked</p>
+                      </div>
+                      <div className="text-center">
+                        <p className="text-2xl font-semibold text-gray-950">50K+</p>
+                        <p className="text-sm text-gray-600">Documents processed</p>
+                      </div>
+                      <div className="text-center">
+                        <p className="text-2xl font-semibold text-gray-950">99.9%</p>
+                        <p className="text-sm text-gray-600">Uptime</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        
-        <CustomBanner />
-        
-        {/* <LogoCloud className="mt-24" /> */}
       </Container>
     </div>
-  )
-}
-
-function PricingCard({ tier }) {
-  return (
-    <div className="-m-2 grid grid-cols-1 rounded-4xl shadow-[inset_0_0_2px_1px_#ffffff4d] ring-1 ring-black/5 max-lg:mx-auto max-lg:w-full max-lg:max-w-md">
-      <div className="grid grid-cols-1 rounded-4xl p-2 shadow-md shadow-black/5">
-        <div className="rounded-3xl bg-white p-10 pb-9 shadow-2xl ring-1 ring-black/5">
-          <Subheading>{tier.name}</Subheading>
-          <p className="mt-2 text-sm/6 text-gray-950/75">{tier.description}</p>
-          <div className="mt-8 flex items-center gap-4">
-            {tier.priceMonthly ? (
-              <>
-                <div className="text-5xl font-medium text-gray-950">
-                  ${tier.priceMonthly}
-                </div>
-                <div className="text-sm/5 text-gray-950/75">
-                  <p>AUD/user</p>
-                  <p>per month</p>
-                </div>
-              </>
-            ) : (
-              <div className="text-5xl font-medium text-gray-950">
-                {tier.priceLabel}
-              </div>
-            )}
-          </div>
-          <div className="mt-8">
-            <Button href={tier.href}>Book a Demo</Button>
-          </div>
-          <div className="mt-8">
-            <h3 className="text-sm/6 font-medium text-gray-950">
-              Key features:
-            </h3>
-            <ul className="mt-3 space-y-3">
-              {tier.highlights.map((props, featureIndex) => (
-                <FeatureItem key={featureIndex} {...props} />
-              ))}
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-function PricingTable({ selectedTier }) {
-  return (
-    <Container className="py-24">
-      <table className="w-full text-left">
-        <caption className="sr-only">Pricing plan comparison</caption>
-        <colgroup>
-          <col className="w-3/5 sm:w-2/5" />
-          <col
-            data-selected={selectedTier === tiers[0] ? true : undefined}
-            className="w-2/5 data-[selected]:table-column max-sm:hidden sm:w-1/5"
-          />
-          <col
-            data-selected={selectedTier === tiers[1] ? true : undefined}
-            className="w-2/5 data-[selected]:table-column max-sm:hidden sm:w-1/5"
-          />
-          <col
-            data-selected={selectedTier === tiers[2] ? true : undefined}
-            className="w-2/5 data-[selected]:table-column max-sm:hidden sm:w-1/5"
-          />
-        </colgroup>
-        <thead>
-          <tr className="max-sm:hidden">
-            <td className="p-0" />
-            {tiers.map((tier) => (
-              <th
-                key={tier.slug}
-                scope="col"
-                data-selected={selectedTier === tier ? true : undefined}
-                className="p-0 data-[selected]:table-cell max-sm:hidden"
-              >
-                <Subheading as="div">{tier.name}</Subheading>
-              </th>
-            ))}
-          </tr>
-          <tr className="sm:hidden">
-            <td className="p-0">
-              <div className="relative inline-block">
-                <Menu>
-                  <MenuButton className="flex items-center justify-between gap-2 font-medium">
-                    {selectedTier.name}
-                    <ChevronUpDownIcon className="size-4 fill-slate-900" />
-                  </MenuButton>
-                  <MenuItems
-                    anchor="bottom start"
-                    className="min-w-[--button-width] rounded-lg bg-white p-1 shadow-lg ring-1 ring-gray-200 [--anchor-gap:6px] [--anchor-offset:-4px] [--anchor-padding:10px]"
-                  >
-                    {tiers.map((tier) => (
-                      <MenuItem key={tier.slug}>
-                        <Link
-                          scroll={false}
-                          href={`/pricing?tier=${tier.slug}`}
-                          data-selected={tier === selectedTier ? true : undefined}
-                          className="group flex items-center gap-2 rounded-md px-2 py-1 data-[focus]:bg-gray-200"
-                        >
-                          {tier.name}
-                          <CheckIcon className="hidden size-4 group-data-[selected]:block" />
-                        </Link>
-                      </MenuItem>
-                    ))}
-                  </MenuItems>
-                </Menu>
-              </div>
-            </td>
-            <td colSpan={3} className="p-0 text-right">
-              <Button variant="outline" href={selectedTier.href}>
-                Book a Demo
-              </Button>
-            </td>
-          </tr>
-          <tr className="max-sm:hidden">
-            <th className="p-0" scope="row">
-              <span className="sr-only">Book a Demo</span>
-            </th>
-            {tiers.map((tier) => (
-              <td
-                key={tier.slug}
-                data-selected={selectedTier === tier ? true : undefined}
-                className="px-0 pb-0 pt-4 data-[selected]:table-cell max-sm:hidden"
-              >
-                <Button variant="outline" href={tier.href}>
-                  Book a Demo
-                </Button>
-              </td>
-            ))}
-          </tr>
-        </thead>
-        {[...new Set(tiers[0].features.map(({ section }) => section))].map(
-          (section) => (
-            <tbody key={section} className="group">
-              <tr>
-                <th
-                  scope="colgroup"
-                  colSpan={4}
-                  className="px-0 pb-0 pt-10 group-first-of-type:pt-5"
-                >
-                  <div className="-mx-4 rounded-lg bg-gray-50 px-4 py-3 text-sm/6 font-semibold">
-                    {section}
-                  </div>
-                </th>
-              </tr>
-              {tiers[0].features
-                .filter((feature) => feature.section === section)
-                .map(({ name }) => (
-                  <tr
-                    key={name}
-                    className="border-b border-gray-100 last:border-none"
-                  >
-                    <th
-                      scope="row"
-                      className="px-0 py-4 text-sm/6 font-normal text-gray-600"
-                    >
-                      {name}
-                    </th>
-                    {tiers.map((tier) => {
-                      let value = tier.features.find(
-                        (feature) =>
-                          feature.section === section && feature.name === name,
-                      )?.value
-
-                      return (
-                        <td
-                          key={tier.slug}
-                          data-selected={selectedTier === tier ? true : undefined}
-                          className="p-4 data-[selected]:table-cell max-sm:hidden"
-                        >
-                          {value === true ? (
-                            <>
-                              <CheckIcon className="size-4 fill-green-600" />
-                              <span className="sr-only">
-                                Included in {tier.name}
-                              </span>
-                            </>
-                          ) : value === false || value === undefined ? (
-                            <>
-                              <MinusIcon className="size-4 fill-gray-400" />
-                              <span className="sr-only">
-                                Not included in {tier.name}
-                              </span>
-                            </>
-                          ) : (
-                            <div className="text-sm/6">{value}</div>
-                          )}
-                        </td>
-                      )
-                    })}
-                  </tr>
-                ))}
-            </tbody>
-          ),
-        )}
-      </table>
-    </Container>
   )
 }
 
@@ -365,22 +149,14 @@ function FeatureItem({ description, disabled = false }) {
   return (
     <li
       data-disabled={disabled ? true : undefined}
-      className="flex items-start gap-4 text-sm/6 text-gray-950/75 data-[disabled]:text-gray-950/25"
+      className="flex items-start gap-3 text-sm/6 text-gray-950/75 data-[disabled]:text-gray-950/25"
     >
       <span className="inline-flex h-6 items-center">
-        <PlusIconCustom className="size-[0.9375rem] shrink-0 fill-gray-950/25" />
+        <CheckIcon className="size-5 shrink-0 fill-green-600" />
       </span>
       {disabled && <span className="sr-only">Not included:</span>}
       {description}
     </li>
-  )
-}
-
-function PlusIconCustom(props) {
-  return (
-    <svg viewBox="0 0 15 15" aria-hidden="true" {...props}>
-      <path clipRule="evenodd" d="M8 0H7v7H0v1h7v7h1V8h7V7H8V0z" />
-    </svg>
   )
 }
 
@@ -405,15 +181,15 @@ function Testimonial() {
           <div className="flex max-lg:mt-16 lg:col-span-2 lg:px-16">
             <figure className="mx-auto flex max-w-xl flex-col gap-16 max-lg:text-center">
               <blockquote>
-                <p className="relative text-3xl tracking-tight text-white before:absolute before:-translate-x-full before:content-['“'] after:absolute after:content-['”'] lg:text-4xl">
-                  Mine Seek’s ability to cross-reference multiple data sources has radically accelerated our decision making. We’re making more informed decisions with greater confidence.
+                <p className="relative text-3xl tracking-tight text-white before:absolute before:-translate-x-full before:content-['\22'] after:absolute after:content-['\22'] lg:text-4xl">
+                  PropVA transformed my chaotic filing system into instant clarity. I now know exactly which properties perform best and can make confident investment decisions in minutes, not days.
                 </p>
               </blockquote>
               <figcaption className="mt-auto">
-                <p className="text-sm/6 font-medium text-white">Stephanie</p>
+                <p className="text-sm/6 font-medium text-white">Sarah Thompson</p>
                 <p className="text-sm/6 font-medium">
                   <span className="bg-gradient-to-r from-[#fff1be] from-[28%] via-[#ee87cb] via-[70%] to-[#b060ff] bg-clip-text text-transparent">
-                    Exploration Manager
+                    Property Investor, 12 Properties
                   </span>
                 </p>
               </figcaption>
@@ -426,56 +202,68 @@ function Testimonial() {
 }
 
 function FrequentlyAskedQuestions() {
+  const faqs = [
+    {
+      question: 'Can I change the number of properties I track?',
+      answer: 'Absolutely! With PropVA you can track unlimited properties. Add or remove properties anytime through your dashboard—your historical data is always preserved.'
+    },
+    {
+      question: 'What measures are in place to ensure the security of our data?',
+      answer: 'Your financial data is protected with bank-level encryption and stored in Australian data centres. We maintain SOC 2 compliance and never share your data with third parties. Every document and calculation is tied to your account with full audit trails.'
+    },
+    {
+      question: 'Can I access PropVA on my phone?',
+      answer: 'Yes, PropVA works seamlessly across all devices. Upload documents from your phone camera, check property performance on your tablet, or dive into detailed reports on your desktop—your data syncs instantly across all platforms.'
+    },
+    {
+      question: 'How does PropVA handle tax deductions?',
+      answer: 'PropVA automatically flags tax-deductible expenses based on ATO guidelines and categorises them by property. At tax time, export a complete summary with all deductions itemised and linked to source documents—your accountant will love you.'
+    },
+    {
+      question: 'How quickly does the AI process documents?',
+      answer: 'Most documents are processed within seconds. Simply drag and drop a rent statement, loan document, or invoice—our AI extracts the data, links it to the right property, and updates your dashboards instantly. You\'ll see a live progress bar showing exactly what\'s happening.'
+    },
+    {
+      question: 'What if I need help getting started?',
+      answer: 'We\'re here to help! Every PropVA account includes onboarding assistance to get you set up quickly. Plus, you\'ll have access to priority support via email, comprehensive documentation, and video tutorials to make the most of your investment tracking.'
+    }
+  ]
+
   return (
     <Container>
-      <section id="faqs" className="scroll-mt-8">
+      <section id="faqs" className="scroll-mt-8 py-24">
         <Subheading className="text-center">
           Frequently asked questions
         </Subheading>
         <Heading as="div" className="mt-2 text-center">
           Your questions answered.
         </Heading>
-        <div className="mx-auto mb-32 mt-16 max-w-xl space-y-12">
-          <dl>
-            <dt className="text-sm font-semibold">
-              What measures are in place to ensure the security of our data?
-            </dt>
-            <dd className="mt-4 text-sm/6 text-gray-600">
-              Data security is our top priority. We employ enterprise-grade encryption, secure data centres, and regular security audits. All data is stored in Australia and complies with relevant mining industry regulations and data protection standards.
-            </dd>
-          </dl>
-          <dl>
-            <dt className="text-sm font-semibold">
-              Can I access the platform on mobile devices?
-            </dt>
-            <dd className="mt-4 text-sm/6 text-gray-600">
-              Yes, Mine Seek offers a responsive web interface that works seamlessly across desktop and mobile devices, allowing your team to access geological insights anywhere in the field.
-            </dd>
-          </dl>
-          <dl>
-            <dt className="text-sm font-semibold">
-              Can we customise the AI workflows for our specific needs?
-            </dt>
-            <dd className="mt-4 text-sm/6 text-gray-600">
-              Yes, our platform is highly customisable. Enterprise clients can define custom AI workflows, integrate private data sources, and configure the system to match their specific exploration processes and requirements.
-            </dd>
-          </dl>
-          <dl>
-            <dt className="text-sm font-semibold">
-              What kind of support do you offer?
-            </dt>
-            <dd className="mt-4 text-sm/6 text-gray-600">
-              We offer comprehensive support through multiple channels, including dedicated account management for Enterprise clients, technical support, and regular training sessions to help your team get the most out of Mine Seek.
-            </dd>
-          </dl>
-          <dl>
-            <dt className="text-sm font-semibold">
-              Can Mine Seek integrate with our existing geological software?
-            </dt>
-            <dd className="mt-4 text-sm/6 text-gray-600">
-              Yes, Mine Seek integrates with major geological software and databases. Our Enterprise plan includes custom integrations with your internal systems and proprietary databases.
-            </dd>
-          </dl>
+        <div className="mx-auto mt-16 max-w-3xl">
+          <div className="divide-y divide-gray-200 rounded-2xl bg-white shadow-sm ring-1 ring-gray-200">
+            {faqs.map((faq, index) => (
+              <Disclosure key={index}>
+                {({ open }) => (
+                  <>
+                    <DisclosureButton className="flex w-full items-center justify-between px-6 py-6 text-left hover:bg-gray-50 focus:outline-none focus-visible:ring focus-visible:ring-blue-500 focus-visible:ring-opacity-50 transition-colors">
+                      <span className="text-lg font-semibold text-gray-900 pr-6">
+                        {faq.question}
+                      </span>
+                      <ChevronDownIcon
+                        className={`${
+                          open ? 'rotate-180 transform' : ''
+                        } h-5 w-5 text-gray-500 transition-transform duration-200 shrink-0`}
+                      />
+                    </DisclosureButton>
+                    <DisclosurePanel className="px-6 pb-6 pt-4">
+                      <p className="text-base/6 text-gray-600">
+                        {faq.answer}
+                      </p>
+                    </DisclosurePanel>
+                  </>
+                )}
+              </Disclosure>
+            ))}
+          </div>
         </div>
       </section>
     </Container>
@@ -483,17 +271,12 @@ function FrequentlyAskedQuestions() {
 }
 
 function PricingContent() {
-  const searchParams = useSearchParams()
-  const selectedSlug = searchParams.get('tier') || 'starter'
-  const selectedTier = tiers.find(tier => tier.slug === selectedSlug) || tiers[0]
-
   return (
     <>
       <Header />
-      <PricingCards />
-      <PricingTable selectedTier={selectedTier} />
+      <HeroPricingCard />
       <Testimonial />
-      {/* <FrequentlyAskedQuestions /> */}
+      <FrequentlyAskedQuestions />
     </>
   )
 }
@@ -505,9 +288,7 @@ export function PricingClient() {
       <Container>
         <Navbar />
       </Container>
-      <Suspense fallback={<PricingCards />}>
-        <PricingContent />
-      </Suspense>
+      <PricingContent />
       <Footer />
     </main>
   )

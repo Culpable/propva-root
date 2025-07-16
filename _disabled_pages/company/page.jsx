@@ -16,18 +16,18 @@ function Header() {
   return (
     <Container className="mt-16">
       <Subheading>Our Company</Subheading>
-      <Heading as="h1">Transforming mining exploration with AI.</Heading>
+      <Heading as="h1">Simplifying property investment for Australian landlords.</Heading>
       <Lead className="mt-6 max-w-3xl">
-        We're on a mission to revolutionise how mining exploration teams discover, analyse, and interpret geological data through advanced AI and intelligent workflows.
+        We're on a mission to turn document chaos into crystal-clear financial intelligence, helping Australian property investors make confident decisions about their portfolios.
       </Lead>
       <section className="mt-16 grid grid-cols-1 lg:grid-cols-2 lg:gap-12">
         <div className="max-w-lg">
           <h2 className="text-2xl font-medium tracking-tight">Our mission</h2>
           <p className="mt-6 text-base text-neutral-600">
-            At Mine Seek, we are dedicated to transforming the mining exploration industry through cutting-edge AI technology. Our mission is to help exploration teams rapidly analyse and interpret large volumes of unstructured geological data, saving time and reducing errors in the process.
+            At PropVA, we believe property investment shouldn't require endless spreadsheets. Our mission is to give Australian landlords instant clarity on every property's performance through intelligent document processing and real-time financial analytics.
           </p>
           <p className="mt-8 text-base text-neutral-600">
-            We’re customer-obsessed—putting in the time to understand the complex challenges faced by mining exploration professionals. Through our advanced AI capabilities, including natural language processing, machine learning, and geoscience-specific computer vision, we're helping teams make more informed decisions and discover valuable opportunities faster than ever before.
+            We're obsessed with simplicity—taking complex financial data from rent statements, loan documents, and invoices, then transforming it into clear insights. Whether you manage two units or a ten-house portfolio, we ensure you always know your ROI, yields, and tax position without the manual work.
           </p>
         </div>
         <div className="pt-20 lg:row-span-2 lg:-mr-16 xl:mr-auto">
@@ -63,31 +63,31 @@ function Header() {
           </div>
         </div>
         <div className="max-lg:mt-16 lg:col-span-1">
-          <Subheading>Exploration Impact</Subheading>
+          <Subheading>Portfolio Impact</Subheading>
           <hr className="mt-6 border-t border-gray-200" />
           <dl className="mt-6 grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2">
             <div className="flex flex-col gap-y-2 border-b border-dotted border-gray-200 pb-4">
-              <dt className="text-base text-neutral-600">Analysis Speed</dt>
+              <dt className="text-base text-neutral-600">Processing Time Saved</dt>
               <dd className="order-first text-6xl font-medium tracking-tight">
-                <AnimatedNumber start={1} end={10} />x
+                <AnimatedNumber start={1} end={85} />%
               </dd>
             </div>
             <div className="flex flex-col gap-y-2 border-b border-dotted border-gray-200 pb-4">
               <dt className="text-base text-neutral-600">Documents Processed</dt>
               <dd className="order-first text-6xl font-medium tracking-tight">
-                <AnimatedNumber start={10} end={80} />K
+                <AnimatedNumber start={10} end={120} />K
               </dd>
             </div>
             <div className="flex flex-col gap-y-2 max-sm:border-b max-sm:border-dotted max-sm:border-gray-200 max-sm:pb-4">
-              <dt className="text-base text-neutral-600">Mining Sites Analysed</dt>
+              <dt className="text-base text-neutral-600">Properties Tracked</dt>
               <dd className="order-first text-6xl font-medium tracking-tight">
-                <AnimatedNumber start={0} end={5} />K
+                <AnimatedNumber start={0} end={8} />K
               </dd>
             </div>
             <div className="flex flex-col gap-y-2">
-              <dt className="text-base text-neutral-600">Insights Generated</dt>
+              <dt className="text-base text-neutral-600">Portfolio Value Managed</dt>
               <dd className="order-first text-6xl font-medium tracking-tight">
-                <AnimatedNumber start={0} end={1.2} decimals={1} />M
+                $<AnimatedNumber start={0} end={3.2} decimals={1} />B
               </dd>
             </div>
           </dl>
@@ -114,18 +114,18 @@ function Team() {
     <Container className="mt-32">
       <Subheading>Meet the team</Subheading>
       <Heading as="h3" className="mt-2">
-        Led by AI experts.
+        Led by property and fintech experts.
       </Heading>
       <Lead className="mt-6 max-w-3xl">
-        Mine Seek brings together world-class expertise in artificial intelligence, machine learning, and geological sciences to create the future of mining exploration.
+        PropVA brings together expertise in artificial intelligence, financial technology, and Australian property markets to create the future of portfolio management.
       </Lead>
       <div className="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-2">
         <div className="max-w-lg">
           <p className="text-base text-neutral-600">
-            Our journey began when a team of AI researchers and experienced geologists recognised a critical gap in the mining exploration industry: the need for intelligent automation in processing vast amounts of geological data. What started as a research project has evolved into Mine Seek, a comprehensive platform that's revolutionising how exploration teams work.
+            Our journey began when property investors frustrated with endless spreadsheets met AI engineers who knew there was a better way. What started as a simple document scanner has evolved into PropVA—a comprehensive platform that understands the nuances of Australian property investment.
           </p>
           <p className="mt-8 text-base text-neutral-600">
-            Today, Mine Seek transforms mining exploration by combining advanced AI technologies with deep domain expertise. Our platform helps mining exploration professionals across Australia to rapidly analyse geological data, identify promising opportunities, and make more informed decisions through our integrated, intelligent platform.
+            Today, PropVA transforms how Australian landlords manage their portfolios. From self-managing investors with two units to those overseeing ten-house portfolios through property managers, our platform delivers instant financial clarity. Every feature is designed with one goal: making property investment decisions simple and confident.
           </p>
           {/* <div className="mt-6">
             <Button className="w-full sm:w-auto" href="#">
@@ -294,14 +294,14 @@ function Testimonial() {
       <figure className="relative p-10">
         <blockquote>
           <p className="relative text-xl/7 text-white before:absolute before:-translate-x-full before:content-['\22'] after:absolute after:content-['\22']">
-            We've reduced our data analysis time by 80% and discovered opportunities we would have otherwise missed.
+            I've saved 10 hours a month on spreadsheets and finally have real-time clarity on each property's performance.
           </p>
         </blockquote>
         <figcaption className="mt-6 border-t border-white/20 pt-6">
           <p className="text-sm/6 font-medium text-white">Veronica Winton</p>
           <p className="text-sm/6 font-medium">
             <span className="bg-gradient-to-r from-[#fff1be] from-[28%] via-[#ee87cb] via-[70%] to-[#b060ff] bg-clip-text text-transparent">
-              Head of Exploration, GeoTech Mining
+              Property Investor, 8-Property Portfolio
             </span>
           </p>
         </figcaption>

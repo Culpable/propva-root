@@ -56,7 +56,7 @@ export function ContactForm() {
     } catch (error) {
       setSubmitStatus({ 
         success: false, 
-        error: 'Sorry, your message failed to send. Please email us directly at solutions@mineseek.com.au'
+        error: 'Sorry, your message failed to send. Please email us directly at hello@propva.com.au'
       })
       console.error('Form submission error:', error)
       
@@ -73,10 +73,10 @@ export function ContactForm() {
   return (
     <div>
       <h2 className="text-2xl font-medium tracking-tight">
-        Book a Demo
+        Login
       </h2>
       <p className="mt-2 text-neutral-600">
-        Fill in the form below to find out how Mine Seek can transform your exploration process.
+        Fill in the form below to find out how PropVA can simplify your property portfolio management.
       </p>
       
       <form 

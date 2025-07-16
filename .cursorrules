@@ -1,7 +1,7 @@
 <project_details>
 
 <description>
-These rules apply specifically to the Mine Seek template repository and should be used for all code within this project scope. The domain is mineseek.com.au
+These rules apply specifically to the PropVA repository and should be used for all code within this project scope. The domain is propva.com.au
 </description>
 
 <content_rules>
@@ -65,7 +65,8 @@ src/
 <disabled_pages>
 _disabled_pages/
 ├── blog/: Blog functionality
-└── studio/: Sanity Studio
+├── studio/: Sanity Studio
+└── company/: Company/About page (temporarily disabled)
 </disabled_pages>
 
 </key_templates>

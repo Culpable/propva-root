@@ -11,7 +11,7 @@ import { PricingClient } from './pricing-client'
 export const metadata = {
   title: 'Pricing',
   description:
-    'Property investors across Australia use Propva to manage their portfolios with crystal-clear financial intelligence. Book a demo today.',
+    'Property investors across Australia use PropVA to manage their portfolios with crystal-clear financial intelligence. Login today.',
 }
 
 export default function Pricing() {

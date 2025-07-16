@@ -151,10 +151,10 @@ function CallToAction() {
       </p>
       <div className="mt-2">
         <Link
-          href="https://app.mineseek.com.au/contact"
+                      href="https://app.propva.com.au/contact"
           className="inline-flex items-center gap-2 text-sm/6 font-medium text-pink-600"
         >
-          Book a demo
+          Login
           <ArrowLongRightIcon className="size-5" />
         </Link>
       </div>

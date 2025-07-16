@@ -51,8 +51,8 @@ export const initMixpanel = () => {
     track_pageview: true,
     
     // Storage configuration
-    persistence: 'localStorage', // Use 'cookie' for cross-subdomain tracking
-    // cross_subdomain_cookie: true, // Uncomment if needed
+    persistence: 'cookie', // Use cookies for cross-subdomain tracking
+    cross_subdomain_cookie: true, // Enable tracking across root domain and subdomains
     
     // Session Replay settings
     record_sessions_percent: 100,        // Record 100% of sessions
@@ -203,6 +203,26 @@ const handleFormSubmit = (formData) => {
 | `record_collect_fonts` | Include font information in recordings | true |
 | `record_idle_timeout_ms` | Idle timeout before stopping recording | 600000 (10 min) |
 | `record_min_ms` | Minimum session length to save | 3000 (3 sec) |
+
+### Cross-Subdomain Tracking
+
+When you have multiple subdomains (e.g., `propva.com.au` and `app.propva.com.au`), enabling cross-subdomain tracking allows Mixpanel to maintain user identity across these domains. This is essential for:
+
+- **Unified User Journey**: Track users as they move between your main site and app
+- **Accurate Attribution**: Understand which marketing campaigns lead to app signups
+- **Complete Funnel Analysis**: See the full conversion path from landing page to app usage
+
+To enable cross-subdomain tracking:
+
+```javascript
+persistence: 'cookie',           // Use cookies instead of localStorage
+cross_subdomain_cookie: true,    // Share cookies across subdomains
+```
+
+**Important Notes:**
+- All subdomains must be under the same root domain
+- HTTPS is required on all subdomains
+- Users' tracking preferences are shared across all subdomains
 
 ### Privacy Considerations
 

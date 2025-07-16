@@ -20,10 +20,10 @@ export default function Contact() {
       </Container>
       <Container className="mt-16">
         <Subheading>Contact Us</Subheading>
-        <Heading>Accelerate your exploration.</Heading>
-        {/* <Lead className="mt-6 max-w-3xl">
-          Ready to transform your mining exploration with AI? Contact us to see how we can help your team discover, analyse, and interpret geological data faster than ever before.
-        </Lead> */}
+        <Heading>Simplify your portfolio today.</Heading>
+        <Lead className="mt-6 max-w-3xl">
+          Ready to transform document chaos into crystal-clear financial intelligence? Let's discuss how PropVA can help you manage your property portfolio with confidence.
+        </Lead>
 
         <div className="mt-24 grid grid-cols-1 gap-x-8 gap-y-24 lg:grid-cols-2">
           <ContactDetails />

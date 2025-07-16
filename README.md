@@ -1,6 +1,6 @@
-# Mine Seek
+# PropVA
 
-Next.js website with App Router and Tailwind CSS, deployed at [mineseek.com.au](https://mineseek.com.au).
+Next.js website with App Router and Tailwind CSS, deployed at [propva.com.au](https://propva.com.au).
 
 ## Prerequisites
 
@@ -61,7 +61,7 @@ git push origin main
 3. Installs dependencies using `npm ci`
 4. Builds static site using `npm run build`
 5. Deploys built files to `gh-pages` branch using `peaceiris/actions-gh-pages`
-6. Configures custom domain (mineseek.com.au) via CNAME
+6. Configures custom domain (propva.com.au) via CNAME
 
 **Important notes:**
 - The `gh-pages` branch is managed automatically - DO NOT modify it directly

@@ -54,16 +54,16 @@ function Hero() {
             AI-powered exploration.
           </h1> */}
           <h1 className="font-display text-balance text-5xl/[0.9] font-medium tracking-tight text-gray-950 sm:text-8xl/[0.8] md:text-8xl/[0.8]">
-            Explore faster.
+            Portfolio clarity.
           </h1>
           {/* <p className="mt-8 max-w-lg text-xl/7 font-medium text-gray-950/75 sm:text-xl/8 lg:text-[1.45rem]/[1.875rem]">
             Accelerate your path from data to discovery with Mine Seek's AI-powered exploration agents.
           </p> */}
           <p className="mt-8 max-w-lg text-xl/7 font-medium text-gray-950/75 sm:text-2xl/8">
-            Mine Seek accelerates your path from data to discovery with AI-powered exploration agents.
+            PropVA turns document chaos into crystal-clear financial intelligence for Australian property investors.
           </p>
           <div className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
-            <Button href="/contact">Book a Demo</Button>
+            <Button href="https://app.propva.com.au/">Login</Button>
             <Button variant="secondary" href="/pricing">
               See pricing
             </Button>
@@ -79,7 +79,7 @@ function FeatureSection() {
     <div className="overflow-hidden">
       <Container className="pb-24">
         <Heading as="h2" className="max-w-5xl">
-          Exploration insights at your fingertips.
+          Property performance at your fingertips.
         </Heading>
         {/* <Screenshot
           width={1216}
@@ -89,14 +89,14 @@ function FeatureSection() {
         /> */}
         {/* Version 1 */}
         {/* <p className="mt-8 max-w-5xl text-xl/7 text-gray-700 sm:text-2xl/8">
-          Unify all your exploration data into a single cohesive platform. Mine Seek’s AI agents seamlessly integrate with WAMEX, OSDU, and any custom information sources your team depends on, bringing everything together into one intuitive interface.
+          Unify all your exploration data into a single cohesive platform. Mine Seek's AI agents seamlessly integrate with WAMEX, OSDU, and any custom information sources your team depends on, bringing everything together into one intuitive interface.
         </p> */}
         {/* Version 2 */}
         <p className="mt-8 max-w-5xl text-xl/7 text-gray-700 sm:text-2xl/8">
-          Unify all your exploration data into a single intuitive interface powered by Mine Seek’s AI agents.
+          See ROI, yields, and equity growth for every property in your portfolio—instantly updated as documents arrive.
         </p>
         <p className="mt-4 max-w-5xl text-xl/7 text-gray-700 sm:text-2xl/8">
-          Seamlessly integrate with WAMEX, SARIG, ArcGIS, and any custom data sources your team relies on, creating one cohesive exploration platform.
+          Drag-and-drop any statement or invoice. Our AI extracts the data, links it to the right property, and updates your dashboards—no spreadsheets required.
         </p>
       </Container>
     </div>
@@ -106,7 +106,7 @@ function FeatureSection() {
 function BentoSection() {
   return (
     <Container>
-      <Subheading>Exploration</Subheading>
+      <Subheading>Portfolio Management</Subheading>
       <Heading as="h3" className="mt-2 max-w-3xl">
         Simple, intuitive, fast.
       </Heading>
@@ -136,22 +136,22 @@ function BentoSection() {
         /> */}
         <BentoCard
           eyebrow="Integration"
-          title="Seamless data integration"
-          description="Connect with your existing geological databases and data sources for a unified exploration workflow."
+          title="All documents, one dashboard"
+          description="Connect rent statements, loan documents, council rates—everything syncs to the right property automatically."
           graphic={<LogoCluster />}
           className="lg:col-span-2 lg:rounded-bl-4xl rounded-bl-4xl max-lg:rounded-t-4xl lg:rounded-tl-4xl max-lg:rounded-br-4xl"
         />
         <BentoCard
-          eyebrow="GLOBAL"
-          title="Global insights"
-          description="From Australia to Zambia, discover exploration opportunities across the globe."
+          eyebrow="AUSTRALIAN"
+          title="Built for Australian investors"
+          description="Financial year grouping, GST tracking, and tax-deductible expense flagging—designed for the Australian market."
           graphic={<Map />}
           className="lg:col-span-2 max-lg:rounded-4xl"
         />
         <BentoCard
           eyebrow="Speed"
-          title="Built for efficiency"
-          description="Streamlined workflows and intelligent automation help your team process more data in less time."
+          title="Instant financial clarity"
+          description="Upload a document, confirm the details, and watch your ROI, yields, and equity calculations update in real-time."
           graphic={
             <div className="flex size-full pl-10 pt-10">
               <Keyboard highlighted={["LeftCommand", "LeftShift", "D"]} />
@@ -171,16 +171,16 @@ function DarkBentoSection() {
         <Subheading dark>Analysis</Subheading>
         <Heading as="h3" dark className="mt-2 max-w-3xl">
           {/* Geological analysis has never been easier */}
-          Your AI-powered advantage.
+          Your financial command centre.
         </Heading>
 
         <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6">
           {/* lg:grid-rows-2 temporarily removed to eliminate extra spacing. Two bottom cards (Collaboration and Reporting) are temporarily hidden. */}
           <BentoCard
             dark
-            eyebrow="Discovery Accelerator"
-            title="Your AI Exploration Assistant"
-            description="Mine Seek's AI agents decode your complex exploration data into actionable insights, accelerating decision-making for exploration teams and reducing time to discovery."
+            eyebrow="Performance Tracking"
+            title="Every metric that matters"
+            description="Track net yields, cash-on-cash returns, capital growth, and loan-to-value ratios. See which properties perform best and why, with every figure linked back to source documents."
             graphic={
               // Original
               // <div className="h-80 bg-[url(/screenshots/chat.png)] bg-[size:851px_344px] bg-no-repeat" />
@@ -193,9 +193,9 @@ function DarkBentoSection() {
           />
           <BentoCard
             dark
-            eyebrow="Cross-Platform"
-            title="Unified exploration interface"
-            description="Eliminate data silos by integrating fragmented exploration data into a cohesive exploration hub."
+            eyebrow="Tax-Ready"
+            title="Accountant-friendly exports"
+            description="Generate financial year summaries with categorised expenses, depreciation schedules, and CGT calculations—ready for your tax return."
             graphic={<LogoTimeline />}
             // className="z-10 !overflow-visible lg:col-span-2 lg:rounded-tr-4xl" //! Bring this back when the two bottom cards are added back.
             className="z-10 !overflow-visible lg:col-span-2 lg:rounded-tr-4xl lg:rounded-br-4xl max-lg:rounded-t-4xl max-lg:rounded-b-4xl"

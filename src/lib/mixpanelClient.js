@@ -1,7 +1,7 @@
 import mixpanel from 'mixpanel-browser';
 
-// Hardcoded token instead of using environment variables
-const MIXPANEL_TOKEN = '187560cd6dae284087bd43a242bde46e';
+// Mixpanel project token - hardcoded for reliability
+const MIXPANEL_TOKEN = '949d4da614a2742e5165a79a1b628b2a';
 
 /**
  * Initialize Mixpanel with hardcoded token and Session Replay configuration
@@ -15,8 +15,8 @@ const MIXPANEL_TOKEN = '187560cd6dae284087bd43a242bde46e';
 export const initMixpanel = () => {
   mixpanel.init(MIXPANEL_TOKEN, {
     track_pageview: true,
-    persistence: 'localStorage', // Only set this to 'cookie' if using cross-subdomain tracking
-    // cross_subdomain_cookie: true,
+    persistence: 'cookie', // Changed from 'localStorage' to enable cross-subdomain tracking
+    cross_subdomain_cookie: true, // Enable tracking across propva.com.au and app.propva.com.au
     record_sessions_percent: 100,
     record_block_selector: "",
     record_mask_text_selector: ".sensitive-data",

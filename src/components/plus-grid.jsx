@@ -47,7 +47,7 @@ export function PlusGridItem({
         // Footer logo version
         <PlusGridIcon
           placement="top left"
-          customPosition="-left-4 sm:-left-6"  // Adjust this value for footer logo
+          customPosition="-left-4 sm:-left-4"  // Adjust this value for footer logo
           className="hidden group-first/item:block"
         />
       ) : isFooterItem ? (
@@ -70,13 +70,13 @@ export function PlusGridItem({
         // Navbar logo version
         <PlusGridIcon 
           placement="top right"
-          customPosition="-right-10"
+          customPosition="-right-4"
         />
       ) : isFooterLogo ? (
         // Footer logo version
         <PlusGridIcon 
           placement="top right"
-          customPosition="-right-8"  // Adjust this value for footer logo
+          customPosition="-right-4"  // Adjust this value for footer logo
         />
       ) : isFooterItem ? (
         // Footer items version
@@ -124,7 +124,7 @@ export function PlusGridItem({
         // Navbar logo version
         <PlusGridIcon
           placement="bottom right"
-          customPosition="-right-10"
+          customPosition="-right-4"
           className="hidden group-last/row:block"
         />
       ) : isFooterLogo ? (

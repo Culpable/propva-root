@@ -10,20 +10,20 @@ function CallToAction() {
   return (
     <div className="relative pb-16 pt-20 text-center sm:py-24">
       <hgroup>
-        <Subheading>Book a Demo</Subheading>
+        <Subheading>Login</Subheading>
         <p className="mt-6 text-3xl font-medium tracking-tight text-gray-950 sm:text-5xl">
-          Ready to experience the future of exploration?
+          Ready to simplify your property portfolio?
           {/* <br />
           <br />
           Book a demo today. */}
         </p>
       </hgroup>
       <p className="mx-auto mt-10 max-w-md text-lg font-medium text-gray-700 sm:text-xl">
-        Harness the power of AI to accelerate your mining exploration.
+        Transform document chaos into crystal-clear financial intelligence for your properties.
       </p>
       <div className="mt-8">
-        <Button className="w-full sm:w-auto" href="/contact">
-          Book a Demo
+        <Button className="w-full sm:w-auto" href="https://app.propva.com.au/">
+          Login
         </Button>
       </div>
     </div>
@@ -60,13 +60,14 @@ function Sitemap() {
           {/* <SitemapLink href="#">API</SitemapLink> */}
         </SitemapLinks>
       </div>
-      <div>
+      {/* About section - temporarily disabled */}
+      {/* <div>
         <SitemapHeading>About</SitemapHeading>
         <SitemapLinks>
-          {/* <SitemapLink href="#">Careers</SitemapLink> */}
+          <SitemapLink href="#">Careers</SitemapLink>
           <SitemapLink href="/company">Company</SitemapLink>
         </SitemapLinks>
-      </div>
+      </div> */}
       <div>
         <SitemapHeading>Support</SitemapHeading>
         <SitemapLinks>
@@ -78,7 +79,7 @@ function Sitemap() {
         <SitemapHeading>Legal</SitemapHeading>
         <SitemapLinks>
           {/* <SitemapLink href="#">Terms of service</SitemapLink> */}
-          <SitemapLink href="https://app.mineseek.com.au/privacy-policy">Privacy policy</SitemapLink>
+          <SitemapLink href="https://app.propva.com.au/privacy-policy">Privacy policy</SitemapLink>
         </SitemapLinks>
       </div>
     </>
@@ -147,7 +148,7 @@ function SocialLinks() {
 function Copyright() {
   return (
     <div className="text-sm/6 text-gray-950">
-      &copy; {new Date().getFullYear()} Mine Seek
+      &copy; {new Date().getFullYear()} PropVA
     </div>
   )
 }

@@ -14,9 +14,9 @@ import { Button } from './button'
 
 const links = [
   { href: '/pricing', label: 'Pricing' },
-  { href: '/company', label: 'Company' },
-  { href: 'https://app.mineseek.com.au/', label: 'Login' },
+  // { href: '/company', label: 'Company' },  // Temporarily disabled
   { href: '/contact', label: 'Book a Demo' },
+  { href: 'https://app.propva.com.au/', label: 'Login' },
 ]
 
 function DesktopNav() {
@@ -24,7 +24,7 @@ function DesktopNav() {
     <nav className="relative hidden lg:flex">
       {links.map(({ href, label }) => (
         <PlusGridItem key={href} className="relative flex">
-          {label === 'Book a Demo' ? (
+          {label === 'Login' ? (
             <Link
               href={href}
               className="flex items-center px-2 py-3"
@@ -73,7 +73,7 @@ function MobileNav() {
             }}
             key={href}
           >
-            {label === 'Book a Demo' ? (
+            {label === 'Login' ? (
               <>
                 {/* V1: Centered button */}
                 {/* <div className="mx-auto max-w-fit">

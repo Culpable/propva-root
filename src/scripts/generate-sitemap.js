@@ -2,13 +2,13 @@ import { writeFileSync } from 'fs'
 import { globby } from 'globby'
 
 // Define base URL for your site
-const SITE_URL = 'https://mineseek.com.au'
+const SITE_URL = 'https://propva.com.au'
 
 // Define core routes that should always be included
 const CORE_ROUTES = [
   '/',              // Homepage
   '/pricing/',
-  '/company/',
+  // '/company/',   // Temporarily disabled
   '/contact/',
 ]
 

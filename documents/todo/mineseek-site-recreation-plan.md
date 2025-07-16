@@ -9,20 +9,52 @@
   - GitHub Actions deployment workflow configured
   - Site successfully running at http://localhost:3000
 
-- **Phase 3.1**: Domain Configuration - **PARTIALLY COMPLETE**
-  - ✅ CNAME files updated to `propva.com.au`
-  - ✅ GitHub Actions workflow updated for new domain
-  - ⏳ Remaining: sitemap.js URL update
+- **Phase 1**: Brand Identity & Assets - **FULLY COMPLETE**
+  - ✅ All logos replaced (SVG and PNG)
+  - ✅ Logo component updated
+  - ✅ All favicon files recreated
+  - ✅ Web app manifest icons updated
+
+- **Phase 2**: Core Configuration - **FULLY COMPLETE**
+  - ✅ **2.1** Metadata Configuration (metadata.js, images.ts)
+  - ✅ **2.2** Package Configuration (package.json)
+  - ✅ **2.3** Site Manifest & PWA (site.webmanifest, browserconfig, robots.txt, sitemap)
+
+- **Phase 3.1**: Domain Configuration - **FULLY COMPLETE**
+  - ✅ All domain references updated to `propva.com.au`
+  - ✅ Sitemap regenerated with new domain
+
+- **Phase 4**: Analytics & Tracking - **FULLY COMPLETE**
+  - ✅ **4.1** Mixpanel Configuration (token updated, cross-subdomain tracking enabled)
+  - ✅ **4.2** Google Ads Tracking (removed entirely)
+  - ✅ **4.3** LinkedIn Tracking (removed entirely)
+  - ✅ **4.4** Referral Tracking (retained - works with Mixpanel)
+
+- **Phase 5**: Content & Copy - **FULLY COMPLETE**
+  - ✅ Homepage content updated (hero, features, bento sections)
+  - ✅ Company page content updated (mission, team, statistics)
+  - ✅ Pricing page updated (plans, features, testimonials)
+  - ✅ Contact page updated (form, email addresses)
+
+- **Phase 6**: Navigation & Footer - **FULLY COMPLETE**
+  - ✅ Navigation links updated (login URL to app.propva.com.au)
+  - ✅ Footer content updated (CTA, copyright, privacy policy URL)
+  - ✅ Logo component simplified to show PropVA branding
+
+- **Phase 7.1**: Organization Schema - **FULLY COMPLETE**
+  - ✅ Updated organization-schema.js with PropVA branding
+  - ✅ All URLs, logos, and descriptions updated
 
 ### 🔄 **IN PROGRESS**
 - **Phase 0 (0.5)**: Initial Documentation Updates - **PENDING**
-- **Phase 2.2**: Package Configuration - **COMPLETED**
 
 ### ⏳ **NEXT UP**
-- **Phase 1**: Brand Identity & Assets (logos, colors, typography)
-- **Phase 2**: Core Configuration (metadata remaining: 2.1, 2.3)
+- **Phase 0.5**: Initial Documentation Updates
 - **Phase 3.2**: Environment Variables
-- **Phase 4**: Analytics & Tracking
+- **Phase 7.2**: Layout Metadata
+- **Phase 8**: Images & Screenshots
+- **Phase 9**: Content Rules & Documentation
+- **Phase 10**: Optional Features
 
 ---
 
@@ -292,13 +324,13 @@ public/
 ```
 
 **Checklist:**
-- [ ] Replace main logo SVG in `public/mine-seek.svg`
-- [ ] Replace PNG logos in `public/logos/` directory
-- [ ] Update Logo component reference in `src/components/logo.jsx`
-- [ ] Generate new favicon set (16x16, 32x32, 96x96, .ico)
-- [ ] Update apple-touch-icon.png (180x180)
-- [ ] Update safari-pinned-tab.svg
-- [ ] Replace web-app-manifest icons (192x192, 512x512)
+- [x] Replace main logo SVG in `public/mine-seek.svg` → `public/propva.svg`
+- [x] Replace PNG logos in `public/logos/` directory
+- [x] Update Logo component reference in `src/components/logo.jsx`
+- [x] Generate new favicon set (16x16, 32x32, 96x96, .ico)
+- [x] Update apple-touch-icon.png (180x180)
+- [x] Update safari-pinned-tab.svg
+- [x] Replace web-app-manifest icons (192x192, 512x512)
 
 #### 1.2 Color Scheme & Typography
 
@@ -312,21 +344,13 @@ public/
 
 **Objective:** Update all configuration files with new brand information
 
-#### 2.1 Metadata Configuration
+#### ~~2.1 Metadata Configuration~~ ✅ **COMPLETED**
 
-**File: `src/lib/metadata.js`**
-```javascript
-// Update all fields:
-title: 'New Brand - Your Tagline',
-description: 'New brand description...',
-siteUrl: 'https://newdomain.com',
-```
+**File: `src/lib/metadata.js`** ✅
+- Updated title, description, and siteUrl with PropVA branding
 
-**File: `src/lib/images.ts`**
-```typescript
-// Update featured image URL:
-featured: 'https://newdomain.com/logos/new-brand-featured.png',
-```
+**File: `src/lib/images.ts`** ✅
+- Updated featured image URL to propva-investment-property.png
 
 #### 2.2 Package Configuration ✅ **COMPLETED**
 
@@ -334,33 +358,27 @@ featured: 'https://newdomain.com/logos/new-brand-featured.png',
 - ✅ `package.json` - Update "name" field (changed from "mineseek" to "propva")
 - ✅ `package-lock.json` - Update "name" field (regenerated with npm install)
 
-#### 2.3 Site Manifest & PWA
+#### ~~2.3 Site Manifest & PWA~~ ✅ **COMPLETED**
 
-**File: `public/site.webmanifest`**
-```json
-{
-  "name": "New Brand",
-  "short_name": "N.Brand",
-  // ... update all fields
-}
-```
+**File: `public/site.webmanifest`** ✅
+- Updated name and short_name to "PropVA"
 
 **Checklist:**
-- [ ] Update browserconfig.xml
-- [ ] Update robots.txt sitemap URL
-- [ ] Generate new sitemap.xml with correct domain
+- [x] Update browserconfig.xml ✅ (references updated icons)
+- [x] Update robots.txt sitemap URL ✅
+- [x] Generate new sitemap.xml with correct domain ✅
 
-### Phase 3: Domain & Deployment - **PARTIALLY COMPLETED** ✅
+### ~~Phase 3: Domain & Deployment~~ ✅ **COMPLETED**
 
 **Objective:** Configure new domain and deployment settings
 
-#### ~~3.1 Domain Configuration~~ - **PARTIALLY COMPLETED** ✅
+#### ~~3.1 Domain Configuration~~ ✅ **COMPLETED**
 
 **Files requiring domain updates:**
-- ✅ ~~`public/CNAME` - Replace with new domain~~ (Updated to propva.com.au)
-- ✅ ~~`CNAME` (root) - Replace with new domain~~ (Updated to propva.com.au)
-- ✅ ~~`.github/workflows/deploy.yml` - Update cname field~~ (Updated to propva.com.au)
-- [ ] `src/scripts/generate-sitemap.js` - Update SITE_URL constant
+- ✅ `public/CNAME` - Replace with new domain (Updated to propva.com.au)
+- ✅ `CNAME` (root) - Replace with new domain (Updated to propva.com.au)
+- ✅ `.github/workflows/deploy.yml` - Update cname field (Updated to propva.com.au)
+- ✅ `src/scripts/generate-sitemap.js` - Update SITE_URL constant
 
 #### 3.2 Environment Variables
 
@@ -369,132 +387,119 @@ featured: 'https://newdomain.com/logos/new-brand-featured.png',
 - [ ] `NEXT_PUBLIC_SANITY_DATASET` (if using Sanity CMS)
 - [ ] `GITHUB_TOKEN` (usually automatic)
 
-### Phase 4: Analytics & Tracking
+### Phase 4: Analytics & Tracking ✅ **COMPLETED**
 
 **Objective:** Replace all tracking and analytics integrations
 
-#### 4.1 Mixpanel Configuration
+#### 4.1 Mixpanel Configuration ✅ **COMPLETED**
 
 **File: `src/lib/mixpanelClient.js`**
 ```javascript
-// Replace hardcoded token:
-const MIXPANEL_TOKEN = 'new_mixpanel_project_token';
+// Token updated:
+const MIXPANEL_TOKEN = '949d4da614a2742e5165a79a1b628b2a';
 ```
 
 **Setup Steps:**
-- [ ] Create new Mixpanel project
-- [ ] Obtain project token from Settings → Project Settings
-- [ ] Update token in mixpanelClient.js
-- [ ] Configure Session Replay settings in Mixpanel dashboard
+- [x] ~~Create new Mixpanel project~~ ✅
+- [x] ~~Obtain project token from Settings → Project Settings~~ ✅
+- [x] ~~Update token in mixpanelClient.js~~ ✅ (Updated with PropVA token)
+- [x] ~~Configure Session Replay settings in Mixpanel dashboard~~ ✅
+- [x] ~~Enable cross-subdomain tracking~~ ✅ (persistence: 'cookie', cross_subdomain_cookie: true)
 
-#### 4.2 Google Ads Tracking
+#### 4.2 Google Ads Tracking ✅ **REMOVED**
 
-**File: `src/scripts/google-ads.js`**
-```javascript
-// Replace with new Google Ads ID:
-src: "https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXXX",
-gtag('config', 'AW-XXXXXXXXXX');
-```
+**Status:** Removed Google Ads tracking scripts entirely
+- Deleted `src/scripts/google-ads.js`
+- Removed Script components from `src/app/layout.jsx`
 
-#### 4.3 LinkedIn Tracking
+#### 4.3 LinkedIn Tracking ✅ **REMOVED**
 
-**File: `src/scripts/linkedin-tracking.js`**
-```javascript
-// Replace partner ID:
-_linkedin_partner_id = "XXXXXXX";
-// Update noscript image URL with new ID
-```
+**Status:** Removed LinkedIn tracking scripts entirely
+- Deleted `src/scripts/linkedin-tracking.js`
+- Removed Script components and noscript fallback from `src/app/layout.jsx`
 
-#### 4.4 Referral Tracking
+#### 4.4 Referral Tracking ✅ **RETAINED**
 
 **File: `public/scripts/referral-tracking.js`**
-- [ ] Review UTM parameter handling for new campaigns
-- [ ] Update any brand-specific referral logic
+- [x] Generic referral tracking script works with Mixpanel
+- [x] Tracks UTM parameters and referral sources
+- [x] No changes needed - compatible with PropVA
 
-### Phase 5: Content & Copy
+### Phase 5: Content & Copy ✅ **COMPLETED**
 
 **Objective:** Replace all marketing copy and content
 
-#### 5.1 Homepage Content
+#### 5.1 Homepage Content ✅
 
 **File: `src/app/page.jsx`**
 
-**Hero Section:**
-- [ ] Main headline (currently "Explore faster.")
-- [ ] Subheading describing value proposition
-- [ ] CTA button text and links
-- [ ] Page metadata and SEO descriptions
+**Hero Section:** ✅
+- [x] Main headline (currently "Explore faster.")
+- [x] Subheading describing value proposition
+- [x] CTA button text and links
+- [x] Page metadata and SEO descriptions
 
-**Feature Sections:**
-- [ ] FeatureSection heading and description
-- [ ] BentoSection card content (3 cards)
-- [ ] DarkBentoSection card content (2 cards)
-- [ ] Integration platform names (WAMEX, SARIG, ArcGIS)
+**Feature Sections:** ✅
+- [x] FeatureSection heading and description
+- [x] BentoSection card content (3 cards)
+- [x] DarkBentoSection card content (2 cards)
+- [x] Integration platform names (WAMEX, SARIG, ArcGIS)
 
-#### 5.2 Company Page
+#### 5.2 Company Page ✅
 
 **File: `src/app/company/page.jsx`**
-- [ ] Page metadata
-- [ ] Company mission statement
-- [ ] Team section content
-- [ ] History/timeline content
-- [ ] Statistics (founded year, team size, etc.)
+- [x] Page metadata
+- [x] Company mission statement
+- [x] Team section content
+- [x] History/timeline content
+- [x] Statistics (founded year, team size, etc.)
 
-#### 5.3 Pricing Page
+#### 5.3 Pricing Page ✅
 
 **Files: `src/app/pricing/page.jsx` and `pricing-client.jsx`**
-- [ ] Plan names and pricing
-- [ ] Feature lists for each plan
-- [ ] FAQ content
-- [ ] Testimonials
+- [x] Plan names and pricing
+- [x] Feature lists for each plan
+- [x] FAQ content
+- [x] Testimonials
 
-#### 5.4 Contact Page
+#### 5.4 Contact Page ✅
 
 **Files in `src/app/contact/`**
-- [ ] Contact form heading and description
-- [ ] Email address (currently solutions@mineseek.com.au)
-- [ ] Error messages mentioning email
-- [ ] Contact details section
+- [x] Contact form heading and description
+- [x] Email address (currently solutions@mineseek.com.au)
+- [x] Error messages mentioning email
+- [x] Contact details section
 
-### Phase 6: Navigation & Footer
+### Phase 6: Navigation & Footer ✅ **COMPLETED**
 
 **Objective:** Update site-wide navigation and footer content
 
-#### 6.1 Navigation Updates
+#### 6.1 Navigation Updates ✅
 
 **File: `src/components/navbar.jsx`**
-- [ ] Update login URL (currently https://app.mineseek.com.au/)
-- [ ] Review navigation labels
-- [ ] Update mobile menu aria-labels
+- [x] Update login URL (currently https://app.mineseek.com.au/)
+- [x] Review navigation labels
+- [x] Update mobile menu aria-labels
 
-#### 6.2 Footer Configuration
+#### 6.2 Footer Configuration ✅
 
 **File: `src/components/footer.jsx`**
-- [ ] Call-to-action text
-- [ ] Copyright text (currently "Mine Seek")
-- [ ] Footer navigation links
-- [ ] Privacy policy URL
-- [ ] Social media URLs (currently generic)
+- [x] Call-to-action text
+- [x] Copyright text (currently "Mine Seek")
+- [x] Footer navigation links
+- [x] Privacy policy URL
+- [x] Social media URLs (currently generic)
 
 ### Phase 7: SEO & Schema
 
 **Objective:** Update all SEO-related configurations
 
-#### 7.1 Organization Schema
+#### ~~7.1 Organization Schema~~ ✅ **COMPLETED**
 
-**File: `src/schemas/organization-schema.js`**
-```javascript
-{
-  "name": "New Brand",
-  "alternateName": ["New Brand: Tagline", "NewBrand"],
-  "url": "https://newdomain.com/",
-  "logo": "https://newdomain.com/logos/new-brand.png",
-  "description": "New brand description...",
-  "address": {
-    // Update all address fields
-  }
-}
-```
+**File: `src/schemas/organization-schema.js`** ✅
+- Updated with PropVA branding
+- Name, URLs, logos, and description all updated
+- Using propva-investment-property.png as featured image
 
 #### 7.2 Layout Metadata
 
@@ -688,10 +693,10 @@ If issues arise:
 
 ### Final Review Items
 
-- [ ] No "Mine Seek" or "mineseek" text remains (case-insensitive search)
-- ✅ ~~No "mineseek.com.au" domain references remain~~ (Updated to propva.com.au)
-- [ ] All images updated with new brand assets
-- [ ] Email addresses updated throughout
+- [x] No "Mine Seek" or "mineseek" text remains (except in documentation files)
+- [x] No "mineseek.com.au" domain references remain (Updated to propva.com.au)
+- [x] All logo and favicon images updated with PropVA brand assets
+- [x] Email addresses updated throughout
 - [ ] Analytics tracking verified in real-time
 - [ ] SEO meta tags showing correctly in browser
 - [ ] Social sharing previews display new brand
