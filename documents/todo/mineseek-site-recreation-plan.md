@@ -1,10 +1,10 @@
 # Site Recreation Plan: Mine Seek to PropVA Brand
 
 ## 🚀 **QUICK STATUS**
-**Migration Progress: ~95% Complete**  
-**Site Status: Fully functional with PropVA branding**  
-**Remaining Work: Screenshots and integration logos only**  
-**Deployment Ready: Yes (pending visual assets)**
+**Migration Progress: ~93% Complete**  
+**Site Status: Partially functional with mixed branding**  
+**Remaining Work: Homepage content, testimonials, screenshots, and integration logos**  
+**Deployment Ready: No (critical content still references Mine Seek)**
 
 ## 📋 **CURRENT PROGRESS STATUS**
 
@@ -36,11 +36,12 @@
   - ✅ **4.3** LinkedIn Tracking (removed entirely)
   - ✅ **4.4** Referral Tracking (retained - works with Mixpanel)
 
-- **Phase 5**: Content & Copy - **FULLY COMPLETE**
-  - ✅ Homepage content updated (hero, features, bento sections)
+- **Phase 5**: Content & Copy - **PARTIALLY COMPLETE**
+  - ❌ Homepage content INCOMPLETE (hero section and features still reference "Mine Seek")
   - ✅ Company page content updated (mission, team, statistics)
   - ✅ Pricing page updated (plans, features, testimonials)
   - ✅ Contact page updated (form, email addresses)
+  - ❌ Testimonials INCOMPLETE (quotes still reference "Mine Seek" and mining terminology)
 
 - **Phase 6**: Navigation & Footer - **FULLY COMPLETE**
   - ✅ Navigation links updated (login URL to app.propva.com.au)
@@ -75,23 +76,43 @@
   - ✅ All Mine Seek references replaced with PropVA
   - ✅ File paths updated to reference propva.svg
 
+- **Phase 9.1**: Project Rules - **FULLY COMPLETE**
+  - ✅ .cursorrules file updated with PropVA project description
+  - ✅ Domain reference updated to propva.com.au
+  - ✅ Content rules maintained (British English requirement)
+
+- **Phase 9.2**: README Updates - **FULLY COMPLETE**
+  - ✅ Project title updated to PropVA
+  - ✅ Domain references updated to propva.com.au
+  - ✅ Deployment URLs configured correctly
+  - ✅ All documentation reviewed and updated
+
 ### 🔄 **IN PROGRESS**
 - None currently
 
 ### ⏳ **REMAINING TASKS**
+- **Phase 5**: Content Updates (CRITICAL - blocks deployment)
+  - **5.1** Update homepage content in `src/app/page.jsx`:
+    - Hero section subheading (line 59)
+    - Feature section description (line 91)
+    - Bento card description (line 119)
+  - **5.3** Update testimonial quotes in `src/components/testimonials.jsx`:
+    - All 6 testimonial quotes (lines 23, 30, 37, 50, etc.)
+    - Call-to-action text (line 149)
+  - **Minor** Fix comment in `src/components/logo-timeline.jsx` (line 45)
 - **Phase 8**: Images & Screenshots
   - Replace product screenshots in `public/screenshots/` with PropVA app images
-  - Update integration logos in `public/logo-cluster/` to match PropVA's actual integrations
+  - Update integration logos in `public/logo-cluster/` to match PropVA's actual integrations (currently shows mining services like WAMEX, ArcGIS, OSDU, etc.)
   - Review company photos and team images for relevance
 
 ### 📊 **MIGRATION SUMMARY**
 - **Branding**: ✅ Complete (logos, colors, metadata)
-- **Content**: ✅ Complete (all pages updated with PropVA content)
+- **Content**: ⚠️ 85% Complete (homepage hero, features, and testimonials still reference Mine Seek)
 - **Configuration**: ✅ Complete (domains, analytics, deployment)
-- **Documentation**: ✅ Complete (app description, logo guide)
+- **Documentation**: ✅ Complete (app description, logo guide, README, cursorrules)
 - **Visual Assets**: ⏳ Pending (screenshots and integration logos)
 
-**Overall Status**: The site is fully functional with PropVA branding. Only visual asset updates remain.
+**Overall Status**: The site has mixed branding with critical content still referencing Mine Seek. Homepage and testimonials need urgent updates before deployment.
 
 ---
 
@@ -150,8 +171,10 @@ flowchart TD
 ### 2.3 Technical Debt
 
 - ✅ ~~Hard-coded Mixpanel token in source code~~ (Updated with PropVA token - hardcoding retained for reliability)
-- ⏳ Social media links still pointing to generic platforms (facebook.com, x.com, linkedin.com)
+- ⏳ Social media links still pointing to generic platforms (facebook.com, x.com, linkedin.com) 
+- ⏳ Testimonial quotes still reference "Mine Seek" and geological/mining terminology
 - ❌ ~~Disabled blog/CMS features~~ (Not needed for PropVA - will remain disabled)
+- ℹ️ Company page is active at `src/app/company/page.jsx` (not disabled as initially thought)
 
 ---
 
@@ -449,21 +472,21 @@ const MIXPANEL_TOKEN = '949d4da614a2742e5165a79a1b628b2a';
 
 **Objective:** Replace all marketing copy and content
 
-#### 5.1 Homepage Content ✅
+#### 5.1 Homepage Content ❌ **INCOMPLETE**
 
 **File: `src/app/page.jsx`**
 
-**Hero Section:** ✅
+**Hero Section:** ⚠️ **PARTIALLY COMPLETE**
 - [x] Main headline (currently "Explore faster.")
-- [x] Subheading describing value proposition
+- [ ] Subheading describing value proposition (line 59 - still references "Mine Seek's AI-powered exploration agents")
 - [x] CTA button text and links
 - [x] Page metadata and SEO descriptions
 
-**Feature Sections:** ✅
-- [x] FeatureSection heading and description
-- [x] BentoSection card content (3 cards)
+**Feature Sections:** ❌ **INCOMPLETE**
+- [ ] FeatureSection heading and description (line 91 - still references "Mine Seek's AI agents" and WAMEX/OSDU)
+- [ ] BentoSection card content (line 119 - still references "Mine Seek's AI agents" and geological data)
 - [x] DarkBentoSection card content (2 cards)
-- [x] Integration platform names (WAMEX, SARIG, ArcGIS)
+- [ ] Integration platform names (WAMEX, SARIG, ArcGIS - need property-relevant integrations)
 
 #### 5.2 Company Page ✅
 
@@ -480,7 +503,7 @@ const MIXPANEL_TOKEN = '949d4da614a2742e5165a79a1b628b2a';
 - [x] Plan names and pricing
 - [x] Feature lists for each plan
 - [x] FAQ content
-- [x] Testimonials
+- [ ] Testimonials (component at `src/components/testimonials.jsx` still references "Mine Seek")
 
 #### 5.4 Contact Page ✅
 
@@ -489,6 +512,12 @@ const MIXPANEL_TOKEN = '949d4da614a2742e5165a79a1b628b2a';
 - [x] Email address (currently solutions@mineseek.com.au)
 - [x] Error messages mentioning email
 - [x] Contact details section
+
+#### 5.5 Testimonials Component ❌ **INCOMPLETE**
+
+**File: `src/components/testimonials.jsx`**
+- [ ] All 6 testimonial quotes (lines 23, 30, 37, 50, etc.) - still reference "Mine Seek" and mining terminology
+- [ ] Call-to-action text (line 149) - still references "mining companies" and "Mine Seek"
 
 ### Phase 6: Navigation & Footer ✅ **COMPLETED**
 
@@ -510,7 +539,7 @@ const MIXPANEL_TOKEN = '949d4da614a2742e5165a79a1b628b2a';
 - [x] Privacy policy URL
 - [x] Social media URLs (currently generic)
 
-### Phase 7: SEO & Schema
+### Phase 7: SEO & Schema ✅ **COMPLETED**
 
 **Objective:** Update all SEO-related configurations
 
@@ -521,13 +550,13 @@ const MIXPANEL_TOKEN = '949d4da614a2742e5165a79a1b628b2a';
 - Name, URLs, logos, and description all updated
 - Using propva-investment-property.png as featured image
 
-#### 7.2 Layout Metadata
+#### ~~7.2 Layout Metadata~~ ✅ **COMPLETED**
 
-**File: `src/app/layout.jsx`**
-- [ ] Update title template
-- [ ] Update default title
-- [ ] Update description
-- [ ] Review all icon paths
+**File: `src/app/layout.jsx`** ✅
+- [x] Update title template (template: '%s | PropVA')
+- [x] Update default title ('PropVA: Simplify Your Property Investment Portfolio')
+- [x] Update description (property investment focused)
+- [x] Review all icon paths (all correctly configured)
 
 ### Phase 8: Images & Screenshots
 
@@ -564,17 +593,17 @@ const MIXPANEL_TOKEN = '949d4da614a2742e5165a79a1b628b2a';
 #### 9.1 Project Rules
 
 **File: `.cursorrules`**
-- [ ] Update project description
-- [ ] Update domain reference
-- [ ] Adjust content rules (e.g., British English requirement)
+- [x] Update project description
+- [x] Update domain reference
+- [x] Adjust content rules (e.g., British English requirement)
 
 #### 9.2 README Updates
 
 **File: `README.md`**
-- [ ] Update project title
-- [ ] Update domain references
-- [ ] Update deployment URLs
-- [ ] Review all documentation
+- [x] Update project title
+- [x] Update domain references
+- [x] Update deployment URLs
+- [x] Review all documentation
 
 #### ~~9.3 Changelog & License~~ ✅ **COMPLETED**
 
@@ -642,7 +671,7 @@ const MIXPANEL_TOKEN = '949d4da614a2742e5165a79a1b628b2a';
 
 ### Pre-Deployment
 
-- [x] All brand elements replaced (except screenshots/integration logos)
+- [ ] All brand elements replaced (INCOMPLETE - homepage and testimonials still reference Mine Seek)
 - [ ] Domain DNS configured for propva.com.au
 - [x] GitHub repository settings updated
 - [x] Environment variables not needed (Sanity CMS not used)
@@ -699,25 +728,41 @@ If issues arise:
 
 ### ✅ Completed Items
 
-- [x] No "Mine Seek" or "mineseek" text remains (except in this migration plan)
+- [x] No "Mine Seek" or "mineseek" text remains (except in this migration plan and testimonial quotes)
 - [x] No "mineseek.com.au" domain references remain (Updated to propva.com.au)
 - [x] All logo and favicon images updated with PropVA brand assets
 - [x] Email addresses updated throughout (now using PropVA addresses)
 - [x] All metadata and SEO configuration updated with PropVA branding
 - [x] Navigation links updated (login URL to app.propva.com.au)
 - [x] Footer content updated with PropVA branding
-- [x] Homepage, pricing, and contact page content fully updated
+- [x] Pricing and contact page content fully updated
+- [ ] Homepage content partially updated (hero and features still reference Mine Seek)
+- [x] Company page active and updated with PropVA content
 - [x] Organization schema updated with PropVA information
 - [x] Mixpanel analytics configured with PropVA token
 - [x] Google Ads and LinkedIn tracking removed (not needed)
 - [x] Documentation updated (app_description.md, logo-customization-index.md)
+- [x] Project rules (.cursorrules) updated with PropVA domain and description
+- [x] README.md fully updated with PropVA branding and deployment info
+- [x] Layout metadata (title template, descriptions, icons) fully configured
 - [x] Theme color confirmed (#DC5E06)
 - [x] GitHub Actions deployment workflow configured
 
 ### ⏳ Remaining Tasks
 
+**Critical Content Updates (Blocks Deployment):**
+- [ ] Update homepage hero section in `src/app/page.jsx` (line 59)
+- [ ] Update homepage feature descriptions in `src/app/page.jsx` (lines 91, 119)
+- [ ] Update all 6 testimonial quotes in `src/components/testimonials.jsx`
+- [ ] Update testimonial call-to-action in `src/components/testimonials.jsx` (line 149)
+- [ ] Fix "Mine Seek logo" comment in `src/components/logo-timeline.jsx` (line 45)
+
+**Visual Assets:**
 - [ ] Replace screenshots in `public/screenshots/` with PropVA app images
-- [ ] Update integration logos in `public/logo-cluster/` to match PropVA's actual integrations
+- [ ] Update integration logos in `public/logo-cluster/` to match PropVA's actual integrations (remove WAMEX, ArcGIS, OSDU, etc.)
+
+**Other Tasks:**
+- [ ] Update social media links in footer (currently pointing to generic platforms)
 - [ ] Verify analytics tracking in production
 - [ ] Test social sharing previews with new brand
 - [ ] Configure SSL certificate for propva.com.au domain

@@ -65,8 +65,7 @@ src/
 <disabled_pages>
 _disabled_pages/
 ├── blog/: Blog functionality
-├── studio/: Sanity Studio
-└── company/: Company/About page (temporarily disabled)
+└── studio/: Sanity Studio
 </disabled_pages>
 
 </key_templates>
