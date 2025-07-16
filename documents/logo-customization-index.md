@@ -1,14 +1,14 @@
-# Mine Seek Logo Customization Guide: Complete Documentation
+# PropVA Logo Customization Guide: Complete Documentation
 
-This document provides comprehensive documentation for customizing logos on the Mine Seek website, including configuration options and implementation details.
+This document provides comprehensive documentation for customizing logos on the PropVA website, including configuration options and implementation details.
 
 ## Quick Reference: Editing Logo Properties
 
 ### Main Logo Properties
 
-The main Mine Seek logo is defined in `src/components/logo.jsx` and consists of two components:
+The main PropVA logo is defined in `src/components/logo.jsx` and consists of two components:
 
-1. **Logo Component**: The full Mine Seek logo including text
+1. **Logo Component**: The full PropVA logo including text
    - Used in navbar and footer
    - Includes hover animations
    - Takes `variant` prop to adjust viewBox settings
@@ -22,7 +22,7 @@ The main Mine Seek logo is defined in `src/components/logo.jsx` and consists of 
 
 To replace the main logo:
 1. Create your new SVG file
-2. Replace `/public/mine-seek.svg` with your new file
+2. Replace `/public/propva.svg` with your new file
 3. If dimensions differ significantly, adjust the viewBox settings in `Logo` component
 
 ```jsx
@@ -61,7 +61,7 @@ variants={{
 
 ### Adjusting Logo Sizes in Logo Timeline
 
-The Logo Timeline component displays the Mine Seek logo in the center with animated rows of integration logos. To adjust the size of the central Mine Seek logo:
+The Logo Timeline component displays the PropVA logo in the center with animated rows of integration logos. To adjust the size of the central PropVA logo:
 
 1. Locate the `<Mark />` component usage in `src/components/logo-timeline.jsx` (around line 42-48)
 2. Modify the `className` prop to adjust the height:
@@ -92,7 +92,7 @@ To adjust the size of integration logos in the timeline:
 
 ### Adjusting Logo Sizes in Logo Cluster
 
-The Logo Cluster shows the Mine Seek logo centrally with satellite logos around it:
+The Logo Cluster shows the PropVA logo centrally with satellite logos around it:
 
 1. To adjust the central logo size:
    - Locate the `MainLogo` function in `src/components/logo-cluster.jsx`
@@ -135,7 +135,7 @@ If you're looking to make a simple logo change:
    - **Logo Cluster**: The circular arrangement of logos in the Bento Section
    - **Logo Timeline**: The animated rows of logos in the Dark Bento Section
    - **Logo Cloud**: The horizontal row of logos (currently disabled)
-   - **Main Logo**: The Mine Seek logo itself
+   - **Main Logo**: The PropVA logo itself
 
 2. Prepare your new logo as an SVG file
    - Optimize it for web using a tool like SVGO
@@ -146,7 +146,7 @@ If you're looking to make a simple logo change:
    - `public/logo-cluster/`
    - `public/logo-timeline/`
    - `public/logo-cloud/`
-   - or replace `public/mine-seek.svg` for the main logo
+   - or replace `public/propva.svg` for the main logo
 
 4. Update the component code to reference your new logo
    - See the corresponding documentation for specific code examples
@@ -173,7 +173,7 @@ See Example 3 in the "Logo Customization Examples" section below.
 
 **Component usage on homepage**:
 - Used in the `BentoSection` component
-- Displays a central Mine Seek logo with satellite logos around it
+- Displays a central PropVA logo with satellite logos around it
 - Each satellite logo has animated hover effects
 
 **Current logos**:
@@ -252,18 +252,18 @@ Example of the logo component code:
 
 ### 4. Main Logo Configuration
 
-The main Mine Seek logo is defined in `src/components/logo.jsx` and has two variants:
+The main PropVA logo is defined in `src/components/logo.jsx` and has two variants:
 
-1. **Full Logo** (`Logo` component) - The complete Mine Seek logo with text
+1. **Full Logo** (`Logo` component) - The complete PropVA logo with text
 2. **Mark Logo** (`Mark` component) - Just the circular mark portion
 
-The main logo file is located at `/public/mine-seek.svg`.
+The main logo file is located at `/public/propva.svg`.
 
 ## Logo Structure Visual Guide
 
 ### Logo Cluster Structure
 
-The Logo Cluster component creates a circular arrangement with the Mine Seek logo in the center:
+The Logo Cluster component creates a circular arrangement with the PropVA logo in the center:
 
 ```
                     Dribbble
@@ -273,8 +273,8 @@ The Logo Cluster component creates a circular arrangement with the Mine Seek log
        ⭕                         ⭕
               
         ⭕         ⭐️         ⭕        
-     LinkedIn     Mine      Career
-                  Seek      Builder
+     LinkedIn    PropVA     Career
+                           Builder
                        
                  ⭕
             We Work Remotely
@@ -413,13 +413,13 @@ In `src/app/page.jsx`, find and uncomment the LogoCloud section:
 
 ### Example 4: Changing the Main Logo
 
-To replace the main Mine Seek logo:
+To replace the main PropVA logo:
 
 #### Step 1: Create a new SVG logo
 Prepare your new logo in SVG format, ensuring it's properly sized and optimized.
 
 #### Step 2: Replace the existing file
-Replace the existing `/public/mine-seek.svg` file with your new logo.
+Replace the existing `/public/propva.svg` file with your new logo.
 
 ### Example 5: Creating a Custom Logo Animation
 
@@ -443,7 +443,7 @@ To customize the hover animation for a logo in the Logo Cluster:
 
 ```
 public/
-├── mine-seek.svg (Main logo)
+├── propva.svg (Main logo)
 ├── logo-cluster/*.svg
 ├── logo-timeline/*.svg
 └── logo-cloud/*.svg
