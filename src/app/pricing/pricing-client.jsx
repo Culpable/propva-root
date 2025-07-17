@@ -35,7 +35,7 @@ const tier = {
     { description: 'Insurance expiry reminders' },
     { description: 'Loan interest & principal tracking' },
     { description: 'Custom depreciation schedules' },
-    { description: 'Priority support' },
+    { description: 'No lock-in contracts' },
   ],
   features: [
     { section: 'Properties', name: 'Properties tracked', value: 'Unlimited' },
@@ -97,13 +97,6 @@ function HeroPricingCard() {
                   <p className="mt-6 text-lg text-gray-950/75">{tier.description}</p>
                 </div>
 
-                {/* CTA Button */}
-                <div className="mt-8 flex justify-center">
-                  <Button href={tier.href} className="px-8">
-                    Start Your Free Trial
-                  </Button>
-                </div>
-
                 {/* Features list - 2 columns on desktop */}
                 <div className="mt-8">
                   <h3 className="text-sm/6 font-semibold text-gray-950 text-center mb-6">
@@ -116,8 +109,15 @@ function HeroPricingCard() {
                   </ul>
                 </div>
 
+                {/* CTA Button */}
+                <div className="mt-8 flex justify-center">
+                  <Button href={tier.href} className="px-8">
+                    Start Your Free Trial
+                  </Button>
+                </div>
+
                 {/* Trust badges */}
-                <div className="mt-12 border-t border-gray-200 pt-8">
+                <div className="mt-8 border-t border-gray-200 pt-8">
                   <div className="flex flex-col items-center gap-4">
                     <p className="text-sm text-gray-600">
                       Join 1,000+ property investors across Australia
@@ -230,7 +230,7 @@ function FrequentlyAskedQuestions() {
       answer: 'We\'re here to help! Every PropVA account includes onboarding assistance to get you set up quickly. Plus, you\'ll have access to priority support via email, comprehensive documentation, and video tutorials to make the most of your investment tracking.'
     },
     {
-      question: 'What measures are in place to ensure the security of our data?',
+      question: 'What about security?',
       answer: 'Your financial data is protected with bank-level encryption, employing enterprise-level authentication with SAML SSO and TLS 1.3 encryption for secure data transmission. We never share or sell your data with third parties, and every document and calculation is tied to your account with full audit trails.'
     },
   ]
