@@ -20,9 +20,8 @@ import { ChevronDownIcon } from '@heroicons/react/24/outline'
 
 const tier = {
   name: 'Professional',
-  description: 'Complete property portfolio management for serious investors.',
+  description: 'Complete property portfolio management.',
   priceMonthly: 19,
-  currency: 'AUD',
   href: 'https://app.propva.com.au/',
   highlights: [
     { description: 'Automated document extraction powered by AI' },
@@ -63,7 +62,7 @@ function Header() {
       <Heading as="h1" className="text-center mt-2">One plan. Everything included.</Heading>
       <Lead className="mt-6 max-w-3xl mx-auto text-center">
         Transform your property investment chaos into crystal-clear financial intelligence. 
-        Start with our 7-day free trial—no credit card required.
+        Try it for free for 7 days—no credit card required.
       </Lead>
     </Container>
   )
@@ -74,7 +73,7 @@ function HeroPricingCard() {
     <div className="relative py-24">
       {/* Background gradient */}
       <div className="absolute inset-0">
-        <div className="absolute inset-x-0 top-0 h-96 bg-gradient-to-b from-gray-50 to-white" />
+        <div className="absolute inset-x-0 top-0 h-96 bg-gradient-to-b from-white to-white" />
         <Gradient className="absolute inset-x-2 top-48 bottom-0 rounded-4xl ring-1 ring-inset ring-black/5" />
       </div>
       
@@ -91,7 +90,6 @@ function HeroPricingCard() {
                       ${tier.priceMonthly}
                     </div>
                     <div className="text-sm/5 text-gray-950/75 text-left">
-                      <p>AUD/user</p>
                       <p>per month</p>
                       <p className="text-xs">(inc. GST)</p>
                     </div>
@@ -107,7 +105,7 @@ function HeroPricingCard() {
                 </div>
 
                 {/* Features list - 2 columns on desktop */}
-                <div className="mt-12">
+                <div className="mt-8">
                   <h3 className="text-sm/6 font-semibold text-gray-950 text-center mb-6">
                     Everything you need to manage your portfolio:
                   </h3>
@@ -182,18 +180,18 @@ function Testimonial() {
               </div>
             </div>
           </div>
-          <div className="flex max-lg:mt-16 lg:col-span-2 lg:px-16">
+          <div className="flex max-lg:mt-16 lg:col-span-2 lg:px-16 lg:-mt-12">
             <figure className="mx-auto flex max-w-xl flex-col gap-16 max-lg:text-center">
               <blockquote>
-                <p className="relative text-3xl tracking-tight text-white before:absolute before:-translate-x-full before:content-['\22'] after:absolute after:content-['\22'] lg:text-4xl">
-                  PropVA transformed my chaotic filing system into instant clarity. I now know exactly which properties perform best and can make confident investment decisions in minutes, not days.
+                <p className="relative text-3xl tracking-tight text-white before:absolute before:-translate-x-full before:content-['“'] after:absolute after:content-['”'] lg:text-4xl">
+                  My property records were a complete mess of spreadsheets and receipts.<br></br><br></br>PropVA made it effortless to see which investments deliver and where to double down—all in a unified dashboard.
                 </p>
               </blockquote>
               <figcaption className="mt-auto">
-                <p className="text-sm/6 font-medium text-white">Sarah Thompson</p>
+                <p className="text-sm/6 font-medium text-white">Sally</p>
                 <p className="text-sm/6 font-medium">
                   <span className="bg-gradient-to-r from-[#fff1be] from-[28%] via-[#ee87cb] via-[70%] to-[#b060ff] bg-clip-text text-transparent">
-                    Property Investor, 12 Properties
+                    Property Investor
                   </span>
                 </p>
               </figcaption>
@@ -208,29 +206,33 @@ function Testimonial() {
 function FrequentlyAskedQuestions() {
   const faqs = [
     {
-      question: 'Can I change the number of properties I track?',
-      answer: 'Absolutely! With PropVA you can track unlimited properties. Add or remove properties anytime through your dashboard—your historical data is always preserved.'
-    },
-    {
-      question: 'What measures are in place to ensure the security of our data?',
-      answer: 'Your financial data is protected with bank-level encryption and stored in Australian data centres. We maintain SOC 2 compliance and never share your data with third parties. Every document and calculation is tied to your account with full audit trails.'
+      question: 'Can I keep track of multiple properties?',
+      answer: 'Absolutely. PropVA supports up to 5 properties, allowing you to analyse your entire portfolio or dive into individual property performance. Compare properties side-by-side to identify your strongest performers and optimise your investment strategy.'
     },
     {
       question: 'Can I access PropVA on my phone?',
       answer: 'Yes, PropVA works seamlessly across all devices. Upload documents from your phone camera, check property performance on your tablet, or dive into detailed reports on your desktop—your data syncs instantly across all platforms.'
     },
     {
+      question: 'How quickly does the AI process documents?',
+      answer: 'Most documents are processed within seconds. Simply drag and drop a rent statement, loan document, or invoice—our AI extracts the relevant data (cost, vendor, ABN, etc.), categorises it, and updates your dashboards instantly.'
+    },
+    {
       question: 'How does PropVA handle tax deductions?',
       answer: 'PropVA automatically flags tax-deductible expenses based on ATO guidelines and categorises them by property. At tax time, export a complete summary with all deductions itemised and linked to source documents—your accountant will love you.'
     },
     {
-      question: 'How quickly does the AI process documents?',
-      answer: 'Most documents are processed within seconds. Simply drag and drop a rent statement, loan document, or invoice—our AI extracts the data, links it to the right property, and updates your dashboards instantly. You\'ll see a live progress bar showing exactly what\'s happening.'
+      question: 'Can I edit the data after it has been processed?',
+      answer: 'Yes, you can edit the data after it has been processed. PropVA makes a recommendation for the data, but you can edit it as you see fit.'
     },
     {
       question: 'What if I need help getting started?',
       answer: 'We\'re here to help! Every PropVA account includes onboarding assistance to get you set up quickly. Plus, you\'ll have access to priority support via email, comprehensive documentation, and video tutorials to make the most of your investment tracking.'
-    }
+    },
+    {
+      question: 'What measures are in place to ensure the security of our data?',
+      answer: 'Your financial data is protected with bank-level encryption, employing enterprise-level authentication with SAML SSO and TLS 1.3 encryption for secure data transmission. We never share or sell your data with third parties, and every document and calculation is tied to your account with full audit trails.'
+    },
   ]
 
   return (

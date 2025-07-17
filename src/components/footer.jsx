@@ -10,7 +10,7 @@ function CallToAction() {
   return (
     <div className="relative pb-16 pt-20 text-center sm:py-24">
       <hgroup>
-        <Subheading>Login</Subheading>
+        <Subheading>Get Started</Subheading>
         <p className="mt-6 text-3xl font-medium tracking-tight text-gray-950 sm:text-5xl">
           Ready to simplify your property portfolio?
           {/* <br />
@@ -19,11 +19,11 @@ function CallToAction() {
         </p>
       </hgroup>
       <p className="mx-auto mt-10 max-w-md text-lg font-medium text-gray-700 sm:text-xl">
-        Transform document chaos into crystal-clear financial intelligence for your properties.
+        A unified dashboard to track yields, analyse performance, and make confident investment decisions.
       </p>
       <div className="mt-8">
         <Button className="w-full sm:w-auto" href="https://app.propva.com.au/">
-          Login
+          Get Started
         </Button>
       </div>
     </div>

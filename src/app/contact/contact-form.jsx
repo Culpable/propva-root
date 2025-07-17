@@ -24,13 +24,11 @@ export function ContactForm() {
       // Create tracking data object from form data with actual fields
       const trackingData = {
         form_source: 'contact_page',
-        has_company: !!formData.get('company'),
-        has_phone: !!formData.get('phone'),
         email_domain: formData.get('email') ? formData.get('email').split('@')[1] : 'not_provided' // Only track domain for privacy
       }
       
       // Submit to Formspree
-      const response = await fetch('https://formspree.io/f/mgvawpvn', {
+      const response = await fetch('https://formspree.io/f/xrblgwbo', {
         method: 'POST',
         body: formData,
         headers: {
@@ -73,7 +71,7 @@ export function ContactForm() {
   return (
     <div>
       <h2 className="text-2xl font-medium tracking-tight">
-        Login
+        Get in touch
       </h2>
       <p className="mt-2 text-neutral-600">
         Fill in the form below to find out how PropVA can simplify your property portfolio management.
@@ -82,7 +80,7 @@ export function ContactForm() {
       <form 
         className="mt-6" 
         onSubmit={handleSubmit}
-        action="https://formspree.io/f/mgvawpvn"
+        action="https://formspree.io/f/xrblgwbo"
         method="POST"
       >
         <div className="isolate -space-y-px rounded-2xl">
@@ -105,23 +103,6 @@ export function ContactForm() {
 
           <div className="group relative z-0 transition-all focus-within:z-10">
             <input
-              type="text"
-              id="company"
-              name="company"
-              placeholder=" "
-              className="peer block w-full border border-neutral-300 bg-transparent px-6 pb-4 pt-12 text-base/6 text-neutral-950 ring-4 ring-transparent transition focus:border-neutral-950 focus:outline-none focus:ring-neutral-950/5 group-first:rounded-t-2xl group-last:rounded-b-2xl"
-              required
-            />
-            <label
-              htmlFor="company"
-              className="pointer-events-none absolute left-6 top-1/2 -mt-3 origin-left text-base/6 text-neutral-500 transition-all duration-200 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:font-semibold peer-focus:text-neutral-950 peer-[:not(:placeholder-shown)]:-translate-y-4 peer-[:not(:placeholder-shown)]:scale-75 peer-[:not(:placeholder-shown)]:font-semibold peer-[:not(:placeholder-shown)]:text-neutral-950"
-            >
-              Company
-            </label>
-          </div>
-
-          <div className="group relative z-0 transition-all focus-within:z-10">
-            <input
               type="email"
               id="email"
               name="email"
@@ -134,23 +115,6 @@ export function ContactForm() {
               className="pointer-events-none absolute left-6 top-1/2 -mt-3 origin-left text-base/6 text-neutral-500 transition-all duration-200 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:font-semibold peer-focus:text-neutral-950 peer-[:not(:placeholder-shown)]:-translate-y-4 peer-[:not(:placeholder-shown)]:scale-75 peer-[:not(:placeholder-shown)]:font-semibold peer-[:not(:placeholder-shown)]:text-neutral-950"
             >
               Email
-            </label>
-          </div>
-
-          <div className="group relative z-0 transition-all focus-within:z-10">
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              placeholder=" "
-              className="peer block w-full border border-neutral-300 bg-transparent px-6 pb-4 pt-12 text-base/6 text-neutral-950 ring-4 ring-transparent transition focus:border-neutral-950 focus:outline-none focus:ring-neutral-950/5 group-first:rounded-t-2xl group-last:rounded-b-2xl"
-              required
-            />
-            <label
-              htmlFor="phone"
-              className="pointer-events-none absolute left-6 top-1/2 -mt-3 origin-left text-base/6 text-neutral-500 transition-all duration-200 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:font-semibold peer-focus:text-neutral-950 peer-[:not(:placeholder-shown)]:-translate-y-4 peer-[:not(:placeholder-shown)]:scale-75 peer-[:not(:placeholder-shown)]:font-semibold peer-[:not(:placeholder-shown)]:text-neutral-950"
-            >
-              Phone
             </label>
           </div>
 
