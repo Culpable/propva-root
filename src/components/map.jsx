@@ -72,13 +72,10 @@ function Marker({ src, top, offset, delay, backgroundColor, houseColor }) {
 export function Map() {
   return (
     <div aria-hidden="true" className="relative size-full">
-      {/* Adjust the bg-[length:XXXpx_YYYpx] values to control zoom level */}
-      {/* Original was 530px × 430px for a 1060 × 860 image (50% scale) */}
-      {/* For 2200 × 1845 image, try these options: */}
-      {/* - bg-[length:300px_252px] - More zoomed out (13.6% scale) */}
-      {/* - bg-[length:350px_294px] - Medium zoom (15.9% scale) */}
-      {/* - bg-[length:400px_336px] - Less zoomed out (18.2% scale) */}
-      <div className="absolute inset-0 bg-[url(/map2.png)] bg-[length:400px_336px] bg-[center_top_20px] bg-no-repeat [mask-image:linear-gradient(to_bottom,black_50%,transparent)]" />
+      {/* Map background with brightness filter */}
+      <div className="absolute inset-0 bg-[url(/map2.png)] bg-[length:400px_336px] bg-[center_top_20px] bg-no-repeat [mask-image:linear-gradient(to_bottom,black_50%,transparent)] brightness-110" />
+      {/* Optional: Add a subtle white overlay for more lightening */}
+      <div className="absolute inset-0 bg-white/75" />
       <div className="absolute inset-0">
         {/* Perth - West coast */}
         {/* <Marker src="/map/house.png" top={185} offset={-180} delay={0.15} /> */}
