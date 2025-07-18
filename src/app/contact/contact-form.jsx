@@ -74,7 +74,7 @@ export function ContactForm() {
         Get in touch
       </h2>
       <p className="mt-2 text-neutral-600">
-        Fill in the form below to find out how PropVA can simplify your property portfolio management.
+        Let us know if you have any questions about PropVA.
       </p>
       
       <form 

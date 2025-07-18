@@ -100,7 +100,7 @@ function HeroPricingCard() {
                 {/* Features list - 2 columns on desktop */}
                 <div className="mt-8">
                   <h3 className="text-sm/6 font-semibold text-gray-950 text-center mb-6">
-                    Everything you need to manage your portfolio:
+                    Everything you need to manage your investment portfolio:
                   </h3>
                   <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-3">
                     {tier.highlights.map((props, featureIndex) => (
@@ -120,20 +120,20 @@ function HeroPricingCard() {
                 <div className="mt-8 border-t border-gray-200 pt-8">
                   <div className="flex flex-col items-center gap-4">
                     <p className="text-sm text-gray-600">
-                      Join 1,000+ property investors across Australia
+                      Join the new standard in property portfolio management
                     </p>
                     <div className="flex items-center gap-8">
                       <div className="text-center">
-                        <p className="text-2xl font-semibold text-gray-950">$2.3B+</p>
-                        <p className="text-sm text-gray-600">Properties tracked</p>
+                        <p className="text-2xl font-semibold text-gray-950">AI-powered</p>
+                        <p className="text-sm text-gray-600">Instant document extraction</p>
                       </div>
                       <div className="text-center">
-                        <p className="text-2xl font-semibold text-gray-950">50K+</p>
-                        <p className="text-sm text-gray-600">Documents processed</p>
+                        <p className="text-2xl font-semibold text-gray-950">7 days</p>
+                        <p className="text-sm text-gray-600">Free trial, no card required</p>
                       </div>
                       <div className="text-center">
-                        <p className="text-2xl font-semibold text-gray-950">99.9%</p>
-                        <p className="text-sm text-gray-600">Uptime</p>
+                        <p className="text-2xl font-semibold text-gray-950">Zero</p>
+                        <p className="text-sm text-gray-600">Manual data entry</p>
                       </div>
                     </div>
                   </div>

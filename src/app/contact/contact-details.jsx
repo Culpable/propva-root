@@ -8,11 +8,11 @@ export function ContactDetails() {
       {/* <h2 className="text-2xl font-medium tracking-tight">
         Login
       </h2> */}
-      <p className="mt-6 text-base text-neutral-600">
-        Want to see how PropVA can transform your property portfolio management?
-      </p>
+      {/* <p className="mt-6 text-base text-neutral-600">
+        See PropVA in action with a personalised demo of your portfolio's potential.
+      </p> */}
       <p className="mt-2 text-base text-neutral-600">
-        Login to discover how you can track ROI, yields, and tax positions across all your properties—without the spreadsheets.
+        Discover how you can track ROI, yields, and tax positions across all your properties—without the spreadsheets.
       </p>
 
       {/* <div className="mt-16 pt-16 relative before:absolute after:absolute before:bg-neutral-950 after:bg-neutral-950/10 before:left-0 before:top-0 before:h-px before:w-6 after:left-8 after:right-0 after:top-0 after:h-px">

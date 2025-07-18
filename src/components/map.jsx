@@ -35,13 +35,24 @@ function Marker({ src, top, offset, delay }) {
 export function Map() {
   return (
     <div aria-hidden="true" className="relative size-full">
-      <div className="absolute inset-0 bg-[url(/map.png)] bg-[length:530px_430px] bg-[center_-75px] bg-no-repeat [mask-image:linear-gradient(to_bottom,black_50%,transparent)]" />
+      {/* Adjust the bg-[length:XXXpx_YYYpx] values to control zoom level */}
+      {/* Original was 530px × 430px for a 1060 × 860 image (50% scale) */}
+      {/* For 2200 × 1845 image, try these options: */}
+      {/* - bg-[length:300px_252px] - More zoomed out (13.6% scale) */}
+      {/* - bg-[length:350px_294px] - Medium zoom (15.9% scale) */}
+      {/* - bg-[length:400px_336px] - Less zoomed out (18.2% scale) */}
+      <div className="absolute inset-0 bg-[url(/map2.png)] bg-[length:400px_336px] bg-[center_top_20px] bg-no-repeat [mask-image:linear-gradient(to_bottom,black_50%,transparent)]" />
       <div className="absolute inset-0">
-        <Marker src="/map/gold.png" top={96} offset={-128} delay={0.15} />
-        <Marker src="/map/silver.png" top={160} offset={-16} delay={0.4} />
-        <Marker src="/map/copper.png" top={144} offset={96} delay={0.3} />
-        <Marker src="/map/iron.png" top={192} offset={64} delay={0.6} />
-        <Marker src="/map/cobalt.png" top={224} offset={-32} delay={0.8} />
+        {/* Perth - West coast */}
+        <Marker src="/map/house2.png" top={185} offset={-180} delay={0.15} />
+        {/* Brisbane - East coast */}
+        <Marker src="/map/house2.png" top={150} offset={160} delay={0.3} />
+        {/* Sydney - East coast */}
+        <Marker src="/map/house.png" top={210} offset={135} delay={0.5} />
+        {/* Melbourne - Southeast corner */}
+        <Marker src="/map/house.png" top={245} offset={85} delay={0.7} />
+        {/* Adelaide - South central */}
+        <Marker src="/map/house.png" top={205} offset={20} delay={0.9} />
       </div>
     </div>
   )

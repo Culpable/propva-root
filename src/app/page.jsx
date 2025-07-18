@@ -56,11 +56,8 @@ function Hero() {
           <h1 className="font-display text-balance text-5xl/[0.9] font-medium tracking-tight text-gray-950 sm:text-8xl/[0.8] md:text-8xl/[0.8]">
             Portfolio clarity.
           </h1>
-          {/* <p className="mt-8 max-w-lg text-xl/7 font-medium text-gray-950/75 sm:text-xl/8 lg:text-[1.45rem]/[1.875rem]">
-            Accelerate your path from data to discovery with Mine Seek's AI-powered exploration agents.
-          </p> */}
           <p className="mt-8 max-w-lg text-xl/7 font-medium text-gray-950/75 sm:text-2xl/8">
-            PropVA turns document chaos into crystal-clear financial intelligence for Australian property investors.
+            PropVA eliminates guesswork through automated expense tracking and real-time investment property yields.
           </p>
           <div className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
             <Button href="https://app.propva.com.au/">Login</Button>
@@ -79,7 +76,7 @@ function FeatureSection() {
     <div className="overflow-hidden">
       <Container className="pb-24">
         <Heading as="h2" className="max-w-5xl">
-          Property performance at your fingertips.
+          Know exactly which properties make money—instantly.
         </Heading>
         {/* <Screenshot
           width={1216}
@@ -93,10 +90,10 @@ function FeatureSection() {
         </p> */}
         {/* Version 2 */}
         <p className="mt-8 max-w-5xl text-xl/7 text-gray-700 sm:text-2xl/8">
-          See ROI, yields, and equity growth for every property in your portfolio—instantly updated as documents arrive.
+          That sinking feeling when you realise your 'great investment' is bleeding cash? Or wondering if refinancing Property 3 would actually improve returns? Without clear numbers, every decision feels like gambling.
         </p>
         <p className="mt-4 max-w-5xl text-xl/7 text-gray-700 sm:text-2xl/8">
-          Drag-and-drop any statement or invoice. Our AI extracts the data, links it to the right property, and updates your dashboards—no spreadsheets required.
+          PropVA shows net yields, cash-on-cash returns, and equity growth for every property the moment documents arrive. No manual calculations, no wondering. Just clarity. Make decisions with confidence, not spreadsheet-induced anxiety.
         </p>
       </Container>
     </div>
@@ -108,7 +105,7 @@ function BentoSection() {
     <Container>
       <Subheading>Portfolio Management</Subheading>
       <Heading as="h3" className="mt-2 max-w-3xl">
-        Simple, intuitive, fast.
+        Numbers, not hunches.
       </Heading>
       {/* TO DO: When adding back the old cards, return to the grid-rows-2 to the div below and remove the  top left/right rounded corners from bottom cards. */}
       {/* <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2"> */}
@@ -136,8 +133,8 @@ function BentoSection() {
         /> */}
         <BentoCard
           eyebrow="Integration"
-          title="All documents, one dashboard"
-          description="Connect rent statements, loan documents, council rates—everything syncs to the right property automatically."
+          title="All properties, one dashboard"
+          description="See every property's performance side-by-side. Compare yields, track expenses, monitor loans—your entire portfolio's health visible at a glance."
           graphic={<LogoCluster />}
           className="lg:col-span-2 lg:rounded-bl-4xl rounded-bl-4xl max-lg:rounded-t-4xl lg:rounded-tl-4xl max-lg:rounded-br-4xl"
         />
@@ -171,7 +168,7 @@ function DarkBentoSection() {
         <Subheading dark>Analysis</Subheading>
         <Heading as="h3" dark className="mt-2 max-w-3xl">
           {/* Geological analysis has never been easier */}
-          Your financial command centre.
+          Your AI-powered advantage.
         </Heading>
 
         <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6">

@@ -20,12 +20,12 @@ export default function Contact() {
       </Container>
       <Container className="mt-16">
         <Subheading>Contact Us</Subheading>
-        <Heading>Simplify your portfolio today.</Heading>
+        <Heading>Simplify your property portfolio.</Heading>
         <Lead className="mt-6 max-w-3xl">
-          Ready to transform document chaos into crystal-clear financial intelligence? Let's discuss how PropVA can help you manage your property portfolio with confidence.
+          See through the paperwork to your real returns. Book a demo to see how PropVA simplifies your investment property portfolio.
         </Lead>
 
-        <div className="mt-24 grid grid-cols-1 gap-x-8 gap-y-24 lg:grid-cols-2">
+        <div className="mt-8 lg:mt-24 grid grid-cols-1 gap-x-8 gap-y-8 lg:gap-y-24 lg:grid-cols-2">
           <ContactDetails />
           <ContactForm />
         </div>
