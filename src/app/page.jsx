@@ -103,7 +103,7 @@ function FeatureSection() {
 function BentoSection() {
   return (
     <Container>
-      <Subheading>Portfolio Management</Subheading>
+      <Subheading>CLARITY</Subheading>
       <Heading as="h3" className="mt-2 max-w-3xl">
         Numbers, not hunches.
       </Heading>
@@ -132,26 +132,26 @@ function BentoSection() {
           className="lg:col-span-3 lg:rounded-tr-4xl"
         /> */}
         <BentoCard
-          eyebrow="Integration"
+          eyebrow="UNIFIED"
           title="All properties, one dashboard"
           description="See every property's performance side-by-side. Compare yields, track expenses, monitor loans—your entire portfolio's health visible at a glance."
           graphic={<LogoCluster />}
           className="lg:col-span-2 lg:rounded-bl-4xl rounded-bl-4xl max-lg:rounded-t-4xl lg:rounded-tl-4xl max-lg:rounded-br-4xl"
         />
         <BentoCard
-          eyebrow="AUSTRALIAN"
+          eyebrow="LOCALISED"
           title="Built for Australian investors"
           description="Financial year grouping, GST tracking, and tax-deductible expense flagging—designed for the Australian market."
           graphic={<Map />}
           className="lg:col-span-2 max-lg:rounded-4xl"
         />
         <BentoCard
-          eyebrow="Speed"
-          title="Instant financial clarity"
+          eyebrow="AUTOMATED"
+          title="Upload. Confirm. Done."
           description="Upload a document, confirm the details, and watch your ROI, yields, and equity calculations update in real-time."
           graphic={
             <div className="flex size-full pl-10 pt-10">
-              <Keyboard highlighted={["LeftCommand", "LeftShift", "D"]} />
+              <Keyboard highlighted={["LeftCommand", "LeftShift", "V"]} />
             </div>
           }
           className="max-lg:rounded-b-4xl lg:col-span-2 lg:rounded-br-4xl lg:rounded-tr-4xl max-lg:rounded-t-4xl"
@@ -165,7 +165,7 @@ function DarkBentoSection() {
   return (
     <div className="mx-2 mt-2 rounded-4xl bg-gray-900 py-32">
       <Container>
-        <Subheading dark>Analysis</Subheading>
+        <Subheading dark>AUTOMATED INSIGHTS</Subheading>
         <Heading as="h3" dark className="mt-2 max-w-3xl">
           {/* Geological analysis has never been easier */}
           Your AI-powered advantage.
@@ -175,13 +175,15 @@ function DarkBentoSection() {
           {/* lg:grid-rows-2 temporarily removed to eliminate extra spacing. Two bottom cards (Collaboration and Reporting) are temporarily hidden. */}
           <BentoCard
             dark
-            eyebrow="Performance Tracking"
-            title="Every metric that matters"
-            description="Track net yields, cash-on-cash returns, capital growth, and loan-to-value ratios. See which properties perform best and why, with every figure linked back to source documents."
+            eyebrow="TRANSPARENCY"
+            title="Complete portfolio visibility"
+            description="Monitor rental yields, expense ratios, profit margins, and overall performance across your investment property portfolio. Identify your top performers, with every number linked to supporting documents for complete transparency."
             graphic={
               // Original
               // <div className="h-80 bg-[url(/screenshots/chat.png)] bg-[size:851px_344px] bg-no-repeat" />
-              <div className="h-80 bg-[url(/screenshots/chat.png)] bg-cover bg-no-repeat" />
+              // MS size
+              // <div className="h-80 bg-[url(/screenshots/dashboard.png)] bg-cover bg-no-repeat" />
+              <div className="h-96 bg-[url(/screenshots/dashboard.png)] bg-[size:851px_344px] bg-no-repeat" />
             }
             fade={["top"]}
             fadeIntensity={0.3} // Reduce to 30% intensity
@@ -190,9 +192,9 @@ function DarkBentoSection() {
           />
           <BentoCard
             dark
-            eyebrow="Tax-Ready"
-            title="Accountant-friendly exports"
-            description="Generate financial year summaries with categorised expenses, depreciation schedules, and CGT calculations—ready for your tax return."
+            eyebrow="INSTANT"
+            title="AI automation that “just works”"
+            description="Upload any receipt or statement—our AI reads, extracts, and categorises every figure automatically. No painful manual entry, no human error."
             graphic={<LogoTimeline />}
             // className="z-10 !overflow-visible lg:col-span-2 lg:rounded-tr-4xl" //! Bring this back when the two bottom cards are added back.
             className="z-10 !overflow-visible lg:col-span-2 lg:rounded-tr-4xl lg:rounded-br-4xl max-lg:rounded-t-4xl max-lg:rounded-b-4xl"
