@@ -66,7 +66,7 @@ export function LogoTimeline() {
             className="[animation-delay:-8s] [animation-duration:30s]"
           /> */}
           <Logo
-            label="Insurance"
+            label="Insurance premiums"
             src="/logo-timeline/insurance.svg"
             className="[animation-delay:0s] [animation-duration:30s]"
           />
@@ -105,7 +105,7 @@ export function LogoTimeline() {
             className="[animation-delay:-10s] [animation-duration:40s]"
           /> */}
           <Logo
-            label="Land tax"
+            label="Land taxes"
             src="/logo-timeline/land.svg"
             className="[animation-delay:-10s] [animation-duration:40s]"
           />
