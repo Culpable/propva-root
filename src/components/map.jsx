@@ -77,6 +77,9 @@ export function Map() {
       {/* Optional: Add a subtle white overlay for more lightening */}
       <div className="absolute inset-0 bg-white/75" />
       <div className="absolute inset-0">
+        {/* Darwin - North central */}
+        <Marker backgroundColor="#581c87" top={15} offset={-40} delay={0.1} />
+        
         {/* Perth - West coast */}
         {/* <Marker src="/map/house.png" top={185} offset={-180} delay={0.15} /> */}
         <Marker backgroundColor="#ea580c" top={185} offset={-180} delay={0.15} />

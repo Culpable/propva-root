@@ -127,52 +127,58 @@ export function LogoCluster() {
       <Circles />
       <div className="absolute left-1/2 h-full w-[26rem] -translate-x-1/2">
         <MainLogo />
-        <Logo
-          backgroundColor="#14532d"
-          houseColor="#ffffff"
-          left={360}
-          top={144}
-          hover={{ x: 6, y: 1, rotate: 5, delay: 0.38 }}
-          size={12}
-        />
+        {/* Darwin - North central */}
         <Logo
           backgroundColor="#581c87"
           houseColor="#ffffff"
-          left={285}
-          top={20}
-          hover={{ x: 4, y: -5, rotate: 6, delay: 0.3 }}
+          left={120}
+          top={15}
+          hover={{ x: 2, y: -3, rotate: 4, delay: 0.1 }}
           size={12}
         />
-        <Logo
-          backgroundColor="#d97706"
-          houseColor="#ffffff"
-          left={255}
-          top={210}
-          hover={{ x: 3, y: 5, rotate: 7, delay: 0.2 }}
-          size={12}
-        />
-        <Logo
-          backgroundColor="#172554"
-          houseColor="#ffffff"
-          left={144}
-          top={40}
-          hover={{ x: -2, y: -5, rotate: -6, delay: 0.15 }}
-          size={12}
-        />
+        {/* Perth - Far west */}
         <Logo
           backgroundColor="#ea580c"
           houseColor="#ffffff"
-          left={36}
-          top={56}
-          hover={{ x: -4, y: -5, rotate: -6, delay: 0.35 }}
+          left={45}
+          top={175}
+          hover={{ x: -6, y: 2, rotate: -8, delay: 0.15 }}
           size={12}
         />
+        {/* Brisbane - Northeast */}
+        <Logo
+          backgroundColor="#14532d"
+          houseColor="#ffffff"
+          left={340}
+          top={95}
+          hover={{ x: 5, y: -2, rotate: 6, delay: 0.3 }}
+          size={12}
+        />
+        {/* Sydney - East coast */}
+        <Logo
+          backgroundColor="#d97706"
+          houseColor="#ffffff"
+          left={315}
+          top={165}
+          hover={{ x: 4, y: 3, rotate: 5, delay: 0.5 }}
+          size={12}
+        />
+        {/* Melbourne - Southeast */}
+        <Logo
+          backgroundColor="#172554"
+          houseColor="#ffffff"
+          left={265}
+          top={225}
+          hover={{ x: 3, y: 4, rotate: -4, delay: 0.7 }}
+          size={12}
+        />
+        {/* Adelaide - South central */}
         <Logo
           backgroundColor="#374151"
           houseColor="#ffffff"
-          left={96}
-          top={176}
-          hover={{ x: -3, y: 5, rotate: 3, delay: 0.15 }}
+          left={165}
+          top={200}
+          hover={{ x: -2, y: 4, rotate: 3, delay: 0.9 }}
           size={12}
         />
       </div>
