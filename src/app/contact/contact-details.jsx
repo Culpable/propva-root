@@ -12,7 +12,10 @@ export function ContactDetails() {
         See PropVA in action with a personalised demo of your portfolio's potential.
       </p> */}
       <p className="mt-2 text-base text-neutral-600">
-        Discover how you can track ROI, yields, and tax positions across all your properties—without the spreadsheets.
+        Get instant clarity on your investment returns—effortlessly track ROI, yields, and tax positions across your entire portfolio.
+      </p>
+      <p className="mt-4 text-base text-neutral-600">
+        Built specifically for Australian investors with automated GST tracking, financial year grouping, and tax-deductible expense flagging.
       </p>
 
       {/* <div className="mt-16 pt-16 relative before:absolute after:absolute before:bg-neutral-950 after:bg-neutral-950/10 before:left-0 before:top-0 before:h-px before:w-6 after:left-8 after:right-0 after:top-0 after:h-px">

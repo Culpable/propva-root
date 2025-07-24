@@ -7,7 +7,7 @@ export const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "PropVA",
-    "alternateName": ["PropVA: AI-Powered Property Investment Portfolio Management", "PropVA"],
+    "alternateName": ["PropVA: AI-Powered Property Investment Portfolio Management"],
     "url": "https://propva.com.au/",
     "logo": "https://propva.com.au/logos/propva.png",
     "image": "https://propva.com.au/logos/propva-investment-property.png",

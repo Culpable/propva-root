@@ -15,7 +15,7 @@ import { Button } from './button'
 const links = [
   { href: '/pricing', label: 'Pricing' },
   // { href: '/company', label: 'Company' },  // Temporarily disabled
-  { href: '/contact', label: 'Book a Demo' },
+  { href: '/contact', label: 'Contact' },
   { href: 'https://app.propva.com.au/', label: 'Login' },
 ]
 

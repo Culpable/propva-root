@@ -89,11 +89,29 @@ function FeatureSection() {
           Unify all your exploration data into a single cohesive platform. Mine Seek's AI agents seamlessly integrate with WAMEX, OSDU, and any custom information sources your team depends on, bringing everything together into one intuitive interface.
         </p> */}
         {/* Version 2 */}
-        <p className="mt-8 max-w-5xl text-xl/7 text-gray-700 sm:text-2xl/8">
+        {/* <p className="mt-8 max-w-5xl text-xl/7 text-gray-700 sm:text-2xl/8">
           That sinking feeling when you realise your 'great investment' is bleeding cash? Or wondering if refinancing Property 3 would actually improve returns? Without clear numbers, every decision feels like gambling.
         </p>
         <p className="mt-4 max-w-5xl text-xl/7 text-gray-700 sm:text-2xl/8">
           PropVA shows net yields, cash-on-cash returns, and equity growth for every property the moment documents arrive. No manual calculations, no wondering. Just clarity. Make decisions with confidence, not spreadsheet-induced anxiety.
+        </p> */}
+        <p className="mt-8 max-w-5xl text-xl/7 text-gray-700 sm:text-2xl/8">
+          That sinking feeling when you realise your ‘great investment’ is bleeding cash?
+        </p>
+        <p className="mt-4 max-w-5xl text-xl/7 text-gray-700 sm:text-2xl/8">
+          Wondering whether that two-bedroom unit is actually making you money?
+        </p>
+        <p className="mt-4 max-w-5xl text-xl/7 text-gray-700 sm:text-2xl/8">
+          <strong>Without clear numbers, each decision feels like taking a shot in the dark.</strong>
+        </p>
+        <p className="mt-4 max-w-5xl text-xl/7 text-gray-700 sm:text-2xl/8">
+          PropVA gives you instant clarity. Track your net yields, cash-on-cash returns, and equity growth for every investment property in your portfolio.
+        </p>
+        <p className="mt-4 max-w-5xl text-xl/7 text-gray-700 sm:text-2xl/8">
+          No manual calculations, no wondering. Complete portfolio visibility.
+        </p>
+        <p className="mt-4 max-w-5xl text-xl/7 text-gray-700 sm:text-2xl/8">
+          Make investment decisions with confidence and maximise your returns.
         </p>
       </Container>
     </div>
@@ -186,7 +204,7 @@ function DarkBentoSection() {
               <div className="h-96 bg-[url(/screenshots/dashboard.png)] bg-[size:851px_344px] bg-no-repeat" />
             }
             fade={["top"]}
-            fadeIntensity={0.3} // Reduce to 30% intensity
+            fadeIntensity={0.05} // Very subtle shadow that won't interfere with property visibility
             // className="z-10 !overflow-visible lg:col-span-2 lg:rounded-tr-4xl" //! Bring this back when the two bottom cards are added back.
             className="max-lg:rounded-t-4xl lg:col-span-4 lg:rounded-tl-4xl lg:rounded-bl-4xl max-lg:rounded-b-4xl"
           />
