@@ -96,7 +96,7 @@ function FeatureSection() {
           PropVA shows net yields, cash-on-cash returns, and equity growth for every property the moment documents arrive. No manual calculations, no wondering. Just clarity. Make decisions with confidence, not spreadsheet-induced anxiety.
         </p> */}
         <p className="mt-8 max-w-5xl text-xl/7 text-gray-700 sm:text-2xl/8">
-          That sinking feeling when you realise your ‘great investment’ is bleeding cash?
+          That sinking feeling when you realise your ‘great investment’ is draining your wallet.
         </p>
         <p className="mt-4 max-w-5xl text-xl/7 text-gray-700 sm:text-2xl/8">
           Wondering whether that two-bedroom unit is actually making you money?

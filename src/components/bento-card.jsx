@@ -18,6 +18,7 @@ export function BentoCard({
     <motion.div
       initial="idle"
       whileHover="active"
+      whileTap="active"
       variants={{ idle: {}, active: {} }}
       data-dark={dark ? 'true' : undefined}
       className={clsx(
