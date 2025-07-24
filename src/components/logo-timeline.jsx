@@ -56,9 +56,9 @@ export function LogoTimeline() {
             className="[animation-delay:-26s] [animation-duration:30s]"
           /> */}
           <Logo
-            label="Prospector"
-            src="/logo-cluster/prospector.png"
-            className="[animation-delay:-26s] [animation-duration:30s]"
+            label="Rental statements"
+            src="/logo-timeline/rent.svg"
+            className="[animation-delay:-20s] [animation-duration:30s]"
           />
           {/* <Logo
             label="Gmail"
@@ -66,9 +66,14 @@ export function LogoTimeline() {
             className="[animation-delay:-8s] [animation-duration:30s]"
           /> */}
           <Logo
-            label="WAMEX"
-            src="/logo-cluster/wamex-white.png"
-            className="[animation-delay:-8s] [animation-duration:30s]"
+            label="Insurance"
+            src="/logo-timeline/insurance.svg"
+            className="[animation-delay:0s] [animation-duration:30s]"
+          />
+          <Logo
+            label="Council rates"
+            src="/logo-timeline/council.svg"
+            className="[animation-delay:-10s] [animation-duration:30s]"
           />
         </Row>
         <Row>
@@ -78,8 +83,8 @@ export function LogoTimeline() {
             className="[animation-delay:-40s] [animation-duration:40s]"
           /> */}
           <Logo
-            label="ArcGIS"
-            src="/logo-cluster/arcgis.png"
+            label="Water rates"
+            src="/logo-timeline/water.svg"
             className="[animation-delay:-40s] [animation-duration:40s]"
           />
           {/* <Logo
@@ -88,8 +93,8 @@ export function LogoTimeline() {
             className="[animation-delay:-20s] [animation-duration:40s]"
           /> */}
           <Logo
-            label="Lithodat"
-            src="/logo-cluster/lithodat.png"
+            label="Electricity bills"
+            src="/logo-timeline/electricity.svg"
             className="[animation-delay:-20s] [animation-duration:40s]"
           />
         </Row>
@@ -100,8 +105,8 @@ export function LogoTimeline() {
             className="[animation-delay:-10s] [animation-duration:40s]"
           /> */}
           <Logo
-            label="OSDU"
-            src="/logo-cluster/osdu.png"
+            label="Land tax"
+            src="/logo-timeline/land.svg"
             className="[animation-delay:-10s] [animation-duration:40s]"
           />
           {/* <Logo
@@ -110,21 +115,21 @@ export function LogoTimeline() {
             className="[animation-delay:-32s] [animation-duration:40s]"
           /> */}
           <Logo
-            label="Leapfrog"
-            src="/logo-cluster/leapfrog.png"
+            label="Strata fees"
+            src="/logo-timeline/strata.svg"
             className="[animation-delay:-32s] [animation-duration:40s]"
           />
         </Row>
         <Row>
           <Logo
-            label="OneGeology"
-            src="/logo-cluster/one-geology.png"
+            label="Legal fees"
+            src="/logo-timeline/legal.svg"
             className="[animation-delay:-45s] [animation-duration:45s]"
           />
 
           <Logo
-            label="Scopus"
-            src="/logo-cluster/elsevier.svg"
+            label="Loan interest"
+            src="/logo-timeline/interest.svg"
             className="[animation-delay:-23s] [animation-duration:45s]"
           />
         </Row>
@@ -143,14 +148,19 @@ export function LogoTimeline() {
         </Row>*/}
         <Row>
           <Logo
-            label="Wikidata"
-            src="/logo-cluster/wikidata.png"
-            className="[animation-delay:-55s] [animation-duration:60s]"
+            label="Maintenance costs"
+            src="/logo-timeline/maintenance.svg"
+            className="[animation-delay:-40s] [animation-duration:60s]"
           />
           <Logo
-            label="OpenTopography"
-            src="/logo-cluster/opentopography.png"
+            label="Cleaning fees"
+            src="/logo-timeline/cleaning.svg"
             className="[animation-delay:-20s] [animation-duration:60s]"
+          />
+          <Logo
+            label="Gardening bills"
+            src="/logo-timeline/gardening.svg"
+            className="[animation-delay:-0s] [animation-duration:60s]"
           />
         </Row>
         {/* <Row>
