@@ -74,7 +74,7 @@ function Hero() {
 function FeatureSection() {
   return (
     <div className="overflow-hidden">
-      <Container className="pb-24">
+      <Container className="pb-20">
         <Heading as="h2" className="max-w-5xl">
           Know exactly which properties make money—instantly.
         </Heading>
@@ -96,16 +96,16 @@ function FeatureSection() {
           PropVA shows net yields, cash-on-cash returns, and equity growth for every property the moment documents arrive. No manual calculations, no wondering. Just clarity. Make decisions with confidence, not spreadsheet-induced anxiety.
         </p> */}
         <p className="mt-8 max-w-5xl text-xl/7 text-gray-700 sm:text-2xl/8">
-          That sinking feeling when you realise your ‘great investment’ is draining your wallet.
+          That sinking feeling when you realise your ‘great investment’ might be draining your wallet.
         </p>
         <p className="mt-4 max-w-5xl text-xl/7 text-gray-700 sm:text-2xl/8">
-          Wondering whether that two-bedroom unit is actually making you money?
+          Is that two-bedroom unit actually making you money, or just eating into your returns?
         </p>
         <p className="mt-4 max-w-5xl text-xl/7 text-gray-700 sm:text-2xl/8">
           <strong>Without clear numbers, each decision feels like taking a shot in the dark.</strong>
         </p>
         <p className="mt-4 max-w-5xl text-xl/7 text-gray-700 sm:text-2xl/8">
-          PropVA gives you instant clarity. Track your net yields, cash-on-cash returns, and equity growth for every investment property in your portfolio.
+          PropVA gives you instant clarity. Track your net yields, lifetime ROI, and year-on-year income growth for every investment property in your portfolio.
         </p>
         <p className="mt-4 max-w-5xl text-xl/7 text-gray-700 sm:text-2xl/8">
           No manual calculations, no wondering. Complete portfolio visibility.
