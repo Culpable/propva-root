@@ -152,7 +152,7 @@ function BentoSection() {
         <BentoCard
           eyebrow="UNIFIED"
           title="All properties, one dashboard"
-          description="See every property's performance side-by-side. Compare yields, track expenses, monitor loans—your entire portfolio's health visible at a glance."
+          description="See every property's performance side-by-side. Compare yields, track expenses, monitor loans—your entire portfolio’s health visible at a glance."
           graphic={<LogoCluster />}
           className="lg:col-span-2 lg:rounded-bl-4xl rounded-bl-4xl max-lg:rounded-t-4xl lg:rounded-tl-4xl max-lg:rounded-br-4xl"
         />

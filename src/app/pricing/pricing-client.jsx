@@ -227,7 +227,7 @@ function FrequentlyAskedQuestions() {
     },
     {
       question: 'What if I need help getting started?',
-      answer: 'We\'re here to help! Every PropVA account includes onboarding assistance to get you set up quickly. Plus, you\'ll have access to priority support via email, comprehensive documentation, and video tutorials to make the most of your investment tracking.'
+      answer: 'We’re here to help. Every PropVA account includes onboarding assistance to get you set up quickly. Plus, you’ll have access to priority support via email, comprehensive documentation, and video tutorials to make the most of your investment tracking.'
     },
     {
       question: 'What about security?',
