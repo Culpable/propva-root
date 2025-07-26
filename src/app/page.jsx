@@ -99,7 +99,7 @@ function FeatureSection() {
           That sinking feeling when you realise your ‘great investment’ might be draining your wallet.
         </p>
         <p className="mt-4 max-w-5xl text-xl/7 text-gray-700 sm:text-2xl/8">
-          Is that two-bedroom unit actually making you money, or just eating into your returns?
+          Unsure if that two-bedroom unit is actually making you money, or just eating into your returns?
         </p>
         <p className="mt-4 max-w-5xl text-xl/7 text-gray-700 sm:text-2xl/8">
           <strong>Without clear numbers, each decision feels like taking a shot in the dark.</strong>
