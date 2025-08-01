@@ -108,6 +108,8 @@
             referralSource = 'Perplexity';
         } else if (normalisedUtmSource === 'deepseek.com') {
             referralSource = 'DeepSeek';
+        } else if (normalisedUtmSource === 'brokerbrew') {
+            referralSource = 'Broker Brew';
         } else if (normalisedUtmSource === 'linkedin' || normalisedUtmSource === 'linkedin.com') {
             referralSource = 'LinkedIn';
         } else {
