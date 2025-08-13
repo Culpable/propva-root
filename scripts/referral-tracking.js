@@ -148,6 +148,36 @@
             }
             
             window.mixpanel.track('Referral Source Identified', trackingData);
+
+            // After emitting the event, set first-touch profile properties and super properties.
+            // Ensure the values are immutable (first-touch) by using set_once/register_once.
+            try {
+                var mp = window.mixpanel;
+
+                // Identify the current anonymous user using their distinct_id so profile ops apply correctly
+                var id = (typeof mp.get_distinct_id === 'function') ? mp.get_distinct_id() : null;
+                if (id && typeof mp.identify === 'function') {
+                    mp.identify(id);
+                }
+
+                // Build initial attribution object
+                var initial = { 'Initial Referral Source': referralSource };
+                if (referringDomain) {
+                    initial['Initial Referring Domain'] = referringDomain;
+                }
+
+                // Persist to profile only if not previously set
+                if (mp.people && typeof mp.people.set_once === 'function') {
+                    mp.people.set_once(initial);
+                }
+
+                // Register as super properties once so future events carry these automatically
+                if (typeof mp.register_once === 'function') {
+                    mp.register_once(initial);
+                }
+            } catch (e) {
+                // no-op: never block the page or event flow on attribution enrichment
+            }
         } else if (attempts < maxAttempts) {
             // Retry after a short delay
             setTimeout(trackReferralSource, interval);
