@@ -42,6 +42,60 @@ const analytics = {
         ...properties
       });
     }
+  },
+
+  /**
+   * Identify a user and set their properties in Mixpanel People
+   * This should be called when we have identifiable user information
+   * @param {string} email - User's email (used as unique identifier)
+   * @param {Object} userProperties - User properties to set
+   */
+  identifyUser: (email, userProperties = {}) => {
+    if (typeof window !== 'undefined' && email) {
+      // Use email as the unique identifier
+      mixpanel.identify(email);
+      
+      // Set user properties in People
+      mixpanel.people.set({
+        $email: email,
+        ...userProperties
+      });
+    }
+  },
+
+  /**
+   * Track form submission with user identification
+   * This combines event tracking with people identification for lead capture
+   * @param {string} formName - Name of the form
+   * @param {Object} formData - Form data being submitted
+   * @param {Object} userInfo - User information for identification (email, name, etc.)
+   */
+  trackFormSubmissionWithIdentification: (formName, formData = {}, userInfo = {}) => {
+    if (typeof window !== 'undefined') {
+      // Track the event first
+      mixpanel.track('Form Submitted', {
+        form_name: formName,
+        ...formData
+      });
+
+      // If we have user info, identify them
+      if (userInfo.email) {
+        // Prepare user properties for people profile
+        const userProperties = {};
+        
+        if (userInfo.name) {
+          userProperties.$name = userInfo.name;
+        }
+        
+        // Add timestamp of first contact
+        userProperties.first_contact_date = new Date().toISOString();
+        userProperties.contact_form_submitted = true;
+        userProperties.lead_source = formData.form_source || 'contact_form';
+
+        // Identify the user
+        analytics.identifyUser(userInfo.email, userProperties);
+      }
+    }
   }
 };
 

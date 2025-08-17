@@ -24,7 +24,7 @@ export function ContactForm() {
       // Create tracking data object from form data with actual fields
       const trackingData = {
         form_source: 'contact_page',
-        email_domain: formData.get('email') ? formData.get('email').split('@')[1] : 'not_provided' // Only track domain for privacy
+        email: formData.get('email') || 'not_provided'
       }
       
       // Submit to Formspree
@@ -39,13 +39,20 @@ export function ContactForm() {
       if (response.ok) {
         // Form submission succeeded
         setSubmitStatus({ success: true, error: null })
-        event.target.reset()
         
-        // Track successful form submission
-        analytics.trackFormSubmission('Contact Form', {
+        // Extract user information for identification
+        const userInfo = {
+          email: formData.get('email'),
+          name: formData.get('name')
+        }
+        
+        // Track successful form submission with user identification
+        analytics.trackFormSubmissionWithIdentification('Contact Form', {
           ...trackingData,
           status: 'success'
-        })
+        }, userInfo)
+        
+        event.target.reset()
       } else {
         // Form submission failed
         const data = await response.json()
