@@ -207,7 +207,14 @@ function FrequentlyAskedQuestions() {
   const faqs = [
     {
       question: 'Can I keep track of multiple properties?',
-      answer: 'Absolutely. PropVA supports up to 5 properties, allowing you to analyse your entire portfolio or dive into individual property performance. Compare properties side-by-side to identify your strongest performers and optimise your investment strategy.'
+      answer: (
+        <>
+          <p>Absolutely. PropVA supports up to 5 properties by default, allowing you to analyse your entire portfolio or dive into individual property performance. Compare properties side-by-side to identify your strongest performers and optimise your investment strategy.</p>
+          <p style={{ marginTop: '12px' }}>
+            If you have over 5 properties to track, <a href="/contact/" className="text-orange-700 underline hover:text-orange-900">contact us</a> to expand your access.
+          </p>
+        </>
+      )
     },
     {
       question: 'Can I access PropVA on my phone?',
