@@ -257,7 +257,9 @@ function FrequentlyAskedQuestions() {
               <Disclosure key={index}>
                 {({ open }) => (
                   <>
-                    <DisclosureButton className="flex w-full items-center justify-between px-6 py-6 text-left hover:bg-gray-50 focus:outline-none focus-visible:ring focus-visible:ring-blue-500 focus-visible:ring-opacity-50 transition-colors">
+                    <DisclosureButton
+                      className={`flex w-full items-center justify-between px-6 py-6 text-left hover:bg-gray-50 focus:outline-none focus-visible:ring focus-visible:ring-blue-500 focus-visible:ring-opacity-50 transition-colors ${index === 0 ? 'rounded-t-2xl' : ''} ${index === faqs.length - 1 ? 'rounded-b-2xl' : ''}`}
+                    >
                       <span className="text-lg font-semibold text-gray-900 pr-6">
                         {faq.question}
                       </span>
