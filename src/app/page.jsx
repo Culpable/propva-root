@@ -14,6 +14,7 @@ import { Navbar } from '@/components/navbar'
 import { Screenshot } from '@/components/screenshot'
 import { Testimonials } from '@/components/testimonials'
 import { Heading, Subheading } from '@/components/text'
+import { VideoOverlay } from '@/components/video-overlay'
 import { ChevronRightIcon } from '@heroicons/react/16/solid'
 import Script from 'next/script'
 import { organizationSchema } from '@/schemas/organization-schema'
@@ -59,11 +60,15 @@ function Hero() {
           <p className="mt-8 max-w-lg text-xl/7 font-medium text-gray-950/75 sm:text-2xl/8">
             PropVA eliminates guesswork through automated expense tracking and real-time investment property yields.
           </p>
-          <div className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
-            <Button href="https://app.propva.com.au/">Login</Button>
-            <Button variant="secondary" href="/pricing">
-              See pricing
-            </Button>
+          <div className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row sm:items-start">
+            <div className="flex flex-col">
+              <Button href="https://app.propva.com.au/" className="inline-flex items-center gap-2">
+                Get started for free
+                <ChevronRightIcon className="h-4 w-4" />
+              </Button>
+              <span className="mt-2 text-sm text-gray-600">No credit card · 7 day free trial</span>
+            </div>
+            <VideoOverlay />
           </div>
         </div>
       </Container>
