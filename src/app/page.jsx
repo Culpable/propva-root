@@ -66,7 +66,7 @@ function Hero() {
                 Get started for free
                 <ChevronRightIcon className="h-4 w-4" />
               </Button>
-              <span className="mt-2 text-sm text-gray-600">No credit card · 7 day free trial</span>
+              <span className="mt-2 text-sm text-gray-600 text-center sm:text-left">No credit card · 7 day free trial</span>
             </div>
             <VideoOverlay />
           </div>

@@ -4,11 +4,26 @@ import { useState } from 'react'
 import { Button } from './button'
 import { PlayCircleIcon } from '@heroicons/react/16/solid'
 import { XMarkIcon } from '@heroicons/react/24/outline'
+import mixpanel from '@/lib/mixpanelClient'
 
 export function VideoOverlay({ videoId = 'VL4HTHX33Zs', className = '' }) {
   const [isOpen, setIsOpen] = useState(false)
 
-  const openVideo = () => setIsOpen(true)
+  const openVideo = () => {
+    // Track video play event in Mixpanel
+    try {
+      if (typeof window !== 'undefined' && window.mixpanel && typeof window.mixpanel.track === 'function') {
+        window.mixpanel.track('Video Play', {
+          'Video ID': videoId
+        })
+      }
+    } catch (error) {
+      // Fail silently to avoid breaking the user experience
+      console.warn('Mixpanel tracking failed:', error)
+    }
+    
+    setIsOpen(true)
+  }
   const closeVideo = () => setIsOpen(false)
 
   return (
