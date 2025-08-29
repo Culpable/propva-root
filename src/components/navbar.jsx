@@ -30,7 +30,7 @@ function DesktopNav() {
               className="flex items-center px-2 py-3"
             >
               <div className="rounded-full px-4 py-2 bg-black text-white hover:bg-gray-800 transition">
-                <span className="text-sm font-medium">{label}</span>
+                <span className="text-[15px] font-medium">{label}</span>
               </div>
             </Link>
           ) : (

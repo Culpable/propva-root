@@ -5,6 +5,7 @@ import { Gradient } from './gradient'
 import { Link } from './link'
 import { Logo } from './logo'
 import { Subheading } from './text'
+import { ChevronRightIcon } from '@heroicons/react/16/solid'
 
 function CallToAction() {
   return (
@@ -21,10 +22,12 @@ function CallToAction() {
       <p className="mx-auto mt-10 max-w-md text-lg font-medium text-gray-700 sm:text-xl">
         A unified dashboard to track yields, analyse performance, and make confident investment decisions.
       </p>
-      <div className="mt-8">
-        <Button className="w-full sm:w-auto" href="https://app.propva.com.au/">
-          Get Started
+      <div className="mt-8 flex flex-col items-center">
+        <Button href="https://app.propva.com.au/" className="inline-flex items-center gap-2">
+          Get started for free
+          <ChevronRightIcon className="h-4 w-4" />
         </Button>
+        <p className="mt-3 text-sm text-gray-600">No credit card · 7 day free trial</p>
       </div>
     </div>
   )

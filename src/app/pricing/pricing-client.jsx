@@ -12,6 +12,7 @@ import { Heading, Lead, Subheading } from '@/components/text'
 import { Menu, MenuButton, MenuItem, MenuItems, Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
 import {
   CheckIcon,
+  ChevronRightIcon,
   ChevronUpDownIcon,
   MinusIcon,
   PlusIcon,
@@ -111,8 +112,9 @@ function HeroPricingCard() {
 
                 {/* CTA Button */}
                 <div className="mt-8 flex justify-center">
-                  <Button href={tier.href} className="px-8">
+                  <Button href={tier.href} className="inline-flex items-center gap-2 px-8">
                     Start Your Free Trial
+                    <ChevronRightIcon className="h-4 w-4" />
                   </Button>
                 </div>
 
