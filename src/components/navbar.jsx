@@ -16,7 +16,7 @@ const links = [
   { href: '/pricing', label: 'Pricing' },
   // { href: '/company', label: 'Company' },  // Temporarily disabled
   { href: '/contact', label: 'Contact' },
-  { href: 'https://app.propva.com.au/', label: 'Login' },
+  { href: 'https://app.propva.com.au/', label: 'Sign up' },
 ]
 
 function DesktopNav() {
@@ -24,7 +24,7 @@ function DesktopNav() {
     <nav className="relative hidden lg:flex">
       {links.map(({ href, label }) => (
         <PlusGridItem key={href} className="relative flex">
-          {label === 'Login' ? (
+          {label === 'Sign up' ? (
             <Link
               href={href}
               className="flex items-center px-2 py-3"
@@ -73,7 +73,7 @@ function MobileNav() {
             }}
             key={href}
           >
-            {label === 'Login' ? (
+            {label === 'Sign up' ? (
               <>
                 {/* V1: Centered button */}
                 {/* <div className="mx-auto max-w-fit">
