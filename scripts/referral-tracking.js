@@ -64,6 +64,7 @@
     const fbclid = getQueryParam('fbclid');
     const utmSource = getQueryParam('utm_source');
     const liclid = getQueryParam('liclid'); // LinkedIn click identifier
+    const utmPage = getQueryParam('utm_page'); // Capture which page the referral came from
     
     // Additional parameters to capture for Google Ads
     const campaignId = getQueryParam('campaign');
@@ -128,6 +129,11 @@
         referralSource = 'LinkedIn';
     } // No need for an else here as 'Direct or Other' is already set by default
 
+    // Add utm_page to additional referral data if present
+    if (utmPage) {
+        additionalReferralData['Referral Page'] = utmPage;
+    }
+
     // Polling mechanism to ensure MixPanel is loaded before tracking
     var maxAttempts = 10;
     var attempts = 0;
@@ -164,6 +170,9 @@
                 var initial = { 'Initial Referral Source': referralSource };
                 if (referringDomain) {
                     initial['Initial Referring Domain'] = referringDomain;
+                }
+                if (utmPage) {
+                    initial['Initial Referral Page'] = utmPage;
                 }
 
                 // Persist to profile only if not previously set
