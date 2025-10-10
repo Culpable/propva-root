@@ -5,8 +5,8 @@ import { siteImages } from './images'
  * This file defines metadata properties used across the site for SEO and social sharing
  */
 export const siteMetadata = {
-  title: 'Propva: Simplify Your Property Investment Portfolio',
-  description: 'Turn property documents into financial intelligence. Propva uses AI to extract data from statements, calculate ROI, yields & tax for Australian investors.',
+  title: 'PropVA: Simplify Your Property Investment Portfolio',
+  description: 'Turn property documents into financial intelligence. PropVA uses AI to extract data from statements, calculate ROI, yields & tax for Australian investors.',
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://propva.com.au',
   // Using the absolute URL directly from siteImages
   ogImage: siteImages.featured,
