@@ -22,7 +22,7 @@ import { siteMetadata } from '@/lib/metadata'
 
 export const metadata = {
   description:
-    "Turn property documents into financial intelligence. Propva uses AI to extract data from statements, calculate ROI, yields & tax for Australian investors.",
+    "Turn property documents into financial intelligence. PropVA uses AI to extract data from statements, calculate ROI, yields & tax for Australian investors.",
   openGraph: {
     title: siteMetadata.title,
     description: siteMetadata.description,
@@ -31,7 +31,7 @@ export const metadata = {
         url: siteMetadata.ogImage,
         width: 1200,
         height: 630,
-        alt: 'Propva: Simplify Your Property Investment Portfolio',
+        alt: 'PropVA: Simplify Your Property Investment Portfolio',
       },
     ],
     type: 'website',

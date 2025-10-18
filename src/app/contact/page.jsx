@@ -8,7 +8,7 @@ import { GradientBackground } from '@/components/gradient'
 
 export const metadata = {
   title: 'Contact Us',
-  description: 'Ready to simplify your property portfolio management? Contact us to see how Propva turns document chaos into financial clarity.',
+  description: 'Ready to simplify your property portfolio management? Contact us to see how PropVA turns document chaos into financial clarity.',
 }
 
 export default function Contact() {
