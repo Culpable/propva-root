@@ -14,7 +14,8 @@ export function VideoOverlay({ videoId = 'VL4HTHX33Zs', className = '' }) {
     try {
       if (typeof window !== 'undefined' && window.mixpanel && typeof window.mixpanel.track === 'function') {
         window.mixpanel.track('Video Play', {
-          'Video ID': videoId
+          'Video ID': videoId,
+          'source': 'homepage'
         })
       }
     } catch (error) {

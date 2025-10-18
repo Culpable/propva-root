@@ -103,7 +103,8 @@ export default function LiteYouTubeEmbed({
               provider: 'youtube',
               location: typeof window !== 'undefined' ? window.location.pathname : undefined,
               page: typeof window !== 'undefined' ? window.location.pathname : undefined,
-              component: 'LiteYouTubeEmbed'
+              component: 'LiteYouTubeEmbed',
+              source: 'demo_page'
             })
           }
         }, { once: true })
