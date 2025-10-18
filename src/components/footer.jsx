@@ -82,7 +82,7 @@ function Sitemap() {
         <SitemapHeading>Legal</SitemapHeading>
         <SitemapLinks>
           {/* <SitemapLink href="#">Terms of service</SitemapLink> */}
-          <SitemapLink href="https://app.propva.com.au/privacy-policy">Privacy policy</SitemapLink>
+          <SitemapLink href="/privacy-policy">Privacy policy</SitemapLink>
         </SitemapLinks>
       </div>
     </>
