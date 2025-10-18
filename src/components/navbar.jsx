@@ -16,6 +16,7 @@ const links = [
   { href: '/pricing', label: 'Pricing' },
   // { href: '/company', label: 'Company' },  // Temporarily disabled
   { href: '/contact', label: 'Contact' },
+  { href: '/demo', label: 'Demo' },
   { href: 'https://app.propva.com.au/', label: 'Sign up' },
 ]
 

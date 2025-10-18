@@ -45,6 +45,20 @@ const analytics = {
   },
 
   /**
+   * Track video play events
+   * @param {string} videoId - Video identifier
+   * @param {Object} properties - Additional video properties
+   */
+  trackVideoPlay: (videoId, properties = {}) => {
+    if (typeof window !== 'undefined') {
+      mixpanel.track('Video Play', {
+        video_id: videoId,
+        ...properties
+      });
+    }
+  },
+
+  /**
    * Identify a user and set their properties in Mixpanel People
    * This should be called when we have identifiable user information
    * @param {string} email - User's email (used as unique identifier)

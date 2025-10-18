@@ -63,6 +63,12 @@ function Sitemap() {
           {/* <SitemapLink href="#">API</SitemapLink> */}
         </SitemapLinks>
       </div>
+      <div>
+        <SitemapHeading>Explore</SitemapHeading>
+        <SitemapLinks>
+          <SitemapLink href="/demo">Demo</SitemapLink>
+        </SitemapLinks>
+      </div>
       {/* About section - temporarily disabled */}
       {/* <div>
         <SitemapHeading>About</SitemapHeading>
