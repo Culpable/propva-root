@@ -114,6 +114,9 @@
         } else if (normalisedUtmSource === 'trackmytrail.com.au') {
             // Map Track My Trail sources to a custom label for clarity in analytics
             referralSource = 'Track My Trail Root Domain';
+        } else if (normalisedUtmSource === 'app.trackmytrail.com.au') {
+            // Map Track My Trail App sources to a custom label for clarity in analytics
+            referralSource = 'Track My Trail App';
         } else if (normalisedUtmSource === 'linkedin' || normalisedUtmSource === 'linkedin.com') {
             referralSource = 'LinkedIn';
         } else {
