@@ -20,6 +20,8 @@ const links = [
   { href: 'https://app.propva.com.au/', label: 'Sign up' },
 ]
 
+const signUpLink = links.find(({ label }) => label === 'Sign up')
+
 function DesktopNav() {
   return (
     <nav className="relative hidden lg:flex">
@@ -107,7 +109,7 @@ export function Navbar({ banner }) {
   return (
     <Disclosure as="header" className="pt-12 sm:pt-16">
       <PlusGrid>
-        <PlusGridRow className="relative flex justify-between">
+        <PlusGridRow className="relative flex items-center justify-between">
           <div className="relative flex gap-6">
             <PlusGridItem className="py-3" isLogo={true}>
               <Link href="/" title="Home">
@@ -121,7 +123,14 @@ export function Navbar({ banner }) {
             )}
           </div>
           <DesktopNav />
-          <MobileNavButton />
+          <div className="flex items-center gap-3 lg:hidden">
+            {signUpLink ? (
+              <Button href={signUpLink.href}>
+                {signUpLink.label}
+              </Button>
+            ) : null}
+            <MobileNavButton />
+          </div>
         </PlusGridRow>
       </PlusGrid>
       <MobileNav />
