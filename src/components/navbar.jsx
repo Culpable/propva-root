@@ -65,7 +65,9 @@ function MobileNav() {
   return (
     <DisclosurePanel className="lg:hidden">
       <div className="flex flex-col gap-6 py-4">
-        {links.map(({ href, label }, linkIndex) => (
+        {links
+          .filter(({ label }) => label !== 'Sign up')
+          .map(({ href, label }, linkIndex) => (
           <motion.div
             initial={{ opacity: 0, rotateX: -90 }}
             animate={{ opacity: 1, rotateX: 0 }}
@@ -76,24 +78,9 @@ function MobileNav() {
             }}
             key={href}
           >
-            {label === 'Sign up' ? (
-              <>
-                {/* V1: Centered button */}
-                {/* <div className="mx-auto max-w-fit">
-                  <Button href={href}>{label}</Button>
-                </div> */}
-                
-                {/* V2: Completely left-aligned button with no margin */}
-                <div>
-                  <Button href={href}>{label}</Button>
-                </div>
-                
-              </>
-            ) : (
-              <Link href={href} className="text-base font-medium text-gray-950">
-                {label}
-              </Link>
-            )}
+            <Link href={href} className="text-base font-medium text-gray-950">
+              {label}
+            </Link>
           </motion.div>
         ))}
       </div>
