@@ -7,11 +7,11 @@ import { LogoCloud } from '@/components/logo-cloud'
 import { Navbar } from '@/components/navbar'
 import { Heading, Lead, Subheading } from '@/components/text'
 import { PricingClient } from './pricing-client'
+import { pageMetadata } from '@/lib/metadata'
 
 export const metadata = {
-  title: 'Pricing',
-  description:
-    'Property investors across Australia use PropVA to manage their portfolios with crystal-clear financial intelligence. Login today.',
+  title: pageMetadata.pricing.title,
+  description: pageMetadata.pricing.description,
 }
 
 export default function Pricing() {

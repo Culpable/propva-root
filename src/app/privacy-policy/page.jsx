@@ -3,10 +3,11 @@ import { Footer } from '@/components/footer'
 import { GradientBackground } from '@/components/gradient'
 import { Navbar } from '@/components/navbar'
 import { LockClosedIcon } from '@heroicons/react/24/outline'
+import { pageMetadata } from '@/lib/metadata'
 
 export const metadata = {
-  title: 'Privacy Policy',
-  description: 'Learn how PropVA protects your privacy and handles your property investment data. We never sell your financial information.',
+  title: pageMetadata.privacyPolicy.title,
+  description: pageMetadata.privacyPolicy.description,
 }
 
 export default function PrivacyPolicy() {
@@ -449,4 +450,3 @@ export default function PrivacyPolicy() {
     </main>
   )
 }
-

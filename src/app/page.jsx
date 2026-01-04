@@ -18,30 +18,13 @@ import { VideoOverlay } from '@/components/video-overlay'
 import { ChevronRightIcon } from '@heroicons/react/16/solid'
 import Script from 'next/script'
 import { organizationSchema } from '@/schemas/organization-schema'
-import { siteMetadata } from '@/lib/metadata'
+import { pageMetadata } from '@/lib/metadata'
 
 export const metadata = {
-  description:
-    "Turn property documents into financial intelligence. PropVA uses AI to extract data from statements, calculate ROI, yields & tax for Australian investors.",
-  openGraph: {
-    title: siteMetadata.title,
-    description: siteMetadata.description,
-    images: [
-      {
-        url: siteMetadata.ogImage,
-        width: 1200,
-        height: 630,
-        alt: 'PropVA: Simplify Your Property Investment Portfolio',
-      },
-    ],
-    type: 'website',
+  title: {
+    absolute: pageMetadata.home.title,
   },
-  twitter: {
-    card: siteMetadata.twitter.cardType,
-    title: siteMetadata.title,
-    description: siteMetadata.description,
-    images: [siteMetadata.ogImage],
-  },
+  description: pageMetadata.home.description,
 }
 
 function Hero() {

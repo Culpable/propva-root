@@ -1,6 +1,7 @@
 import '@/styles/tailwind.css'
 import localFont from 'next/font/local'
 import MixpanelProvider from '@/components/MixpanelProvider'
+import { siteMetadata } from '@/lib/metadata'
 
 // Load Switzer font files locally for optimal performance
 const switzer = localFont({
@@ -75,10 +76,32 @@ const switzer = localFont({
 export const metadata = {
   title: {
     template: '%s | PropVA',
-    default: 'PropVA: Simplify Your Property Investment Portfolio',
+    default: siteMetadata.title,
   },
-  description:
-    'Turn property documents into financial intelligence. PropVA uses AI to extract data from statements, calculate ROI, yields & tax for Australian investors.',
+  description: siteMetadata.description,
+  openGraph: {
+    title: siteMetadata.title,
+    description: siteMetadata.description,
+    url: siteMetadata.siteUrl,
+    siteName: siteMetadata.name,
+    images: [
+      {
+        url: siteMetadata.ogImage,
+        width: 1200,
+        height: 630,
+        alt: siteMetadata.title,
+      },
+    ],
+    locale: siteMetadata.locale,
+    type: 'website',
+  },
+  twitter: {
+    card: siteMetadata.twitter.cardType,
+    title: siteMetadata.title,
+    description: siteMetadata.description,
+    images: [siteMetadata.ogImage],
+  },
+  metadataBase: new URL(siteMetadata.siteUrl),
   icons: {
     icon: [
       { url: '/favicon.ico', type: 'image/x-icon', sizes: '32x32' },

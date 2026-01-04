@@ -2,10 +2,11 @@ import { VideoHero } from '@/components/video-hero'
 import { Footer } from '@/components/footer'
 import { GradientBackground } from '@/components/gradient'
 import { ChevronRightIcon, EnvelopeIcon } from '@heroicons/react/16/solid'
+import { pageMetadata } from '@/lib/metadata'
 
 export const metadata = {
-  title: 'Demo',
-  description: 'Watch PropVA in action. See how we simplify property portfolio management with our intuitive platform.',
+  title: pageMetadata.demo.title,
+  description: pageMetadata.demo.description,
 }
 
 export default function DemoPage() {
