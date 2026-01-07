@@ -1,5 +1,7 @@
 import mixpanel from './mixpanelClient';
 
+const isDevelopment = process.env.NODE_ENV === 'development';
+
 /**
  * Analytics utility functions for tracking user interactions
  * Provides a consistent interface for event tracking throughout the application
@@ -11,6 +13,9 @@ const analytics = {
    * @param {Object} properties - Additional event properties
    */
   track: (eventName, properties = {}) => {
+    if (isDevelopment) {
+      return;
+    }
     if (typeof window !== 'undefined') {
       mixpanel.track(eventName, properties);
     }
@@ -22,6 +27,9 @@ const analytics = {
    * @param {Object} formData - Form data being submitted
    */
   trackFormSubmission: (formName, formData = {}) => {
+    if (isDevelopment) {
+      return;
+    }
     if (typeof window !== 'undefined') {
       mixpanel.track('Form Submitted', {
         form_name: formName,
@@ -36,6 +44,9 @@ const analytics = {
    * @param {Object} properties - Additional properties
    */
   trackButtonClick: (buttonName, properties = {}) => {
+    if (isDevelopment) {
+      return;
+    }
     if (typeof window !== 'undefined') {
       mixpanel.track('Button Clicked', {
         button_name: buttonName,
@@ -50,6 +61,9 @@ const analytics = {
    * @param {Object} properties - Additional video properties
    */
   trackVideoPlay: (videoId, properties = {}) => {
+    if (isDevelopment) {
+      return;
+    }
     if (typeof window !== 'undefined') {
       mixpanel.track('Video Play', {
         video_id: videoId,
@@ -65,6 +79,9 @@ const analytics = {
    * @param {Object} userProperties - User properties to set
    */
   identifyUser: (email, userProperties = {}) => {
+    if (isDevelopment) {
+      return;
+    }
     if (typeof window !== 'undefined' && email) {
       // Use email as the unique identifier
       mixpanel.identify(email);
@@ -85,6 +102,9 @@ const analytics = {
    * @param {Object} userInfo - User information for identification (email, name, etc.)
    */
   trackFormSubmissionWithIdentification: (formName, formData = {}, userInfo = {}) => {
+    if (isDevelopment) {
+      return;
+    }
     if (typeof window !== 'undefined') {
       // Track the event first
       mixpanel.track('Form Submitted', {

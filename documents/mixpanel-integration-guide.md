@@ -2,6 +2,12 @@
 
 This guide explains how to integrate Mixpanel analytics with Session Replay functionality into a Next.js project using the App Router architecture.
 
+## Current Implementation Notes (This Repo)
+
+- The Mixpanel token is hardcoded in `src/lib/mixpanelClient.js`.
+- Mixpanel is disabled in development - it only initializes in production builds.
+- A `window.mixpanelDisabled` flag is set in development for visibility.
+
 ## Overview
 
 This integration provides:
@@ -37,7 +43,7 @@ Create `src/lib/mixpanelClient.js`:
 ```javascript
 import mixpanel from 'mixpanel-browser';
 
-// Replace with your Mixpanel project token
+// Mixpanel token is hardcoded in this repo
 const MIXPANEL_TOKEN = 'your_mixpanel_project_token_here';
 
 /**
@@ -244,7 +250,9 @@ To protect sensitive data:
    record_sessions_percent: 10 // Only record 10% of sessions
    ```
 
-## Best Practices
+## Optional Improvements (Not Implemented in This Repo)
+
+These are not currently in the codebase but can be added if needed.
 
 1. **Environment-based configuration**: Use environment variables for tokens:
    ```javascript
@@ -279,9 +287,9 @@ To protect sensitive data:
 
 3. **Events not appearing**: Ensure you're looking at the correct Mixpanel project and that events aren't being filtered
 
-### Debug Mode
+### Debug Mode (Optional)
 
-Enable debug mode during development:
+Debug mode is not enabled by default. To enable it during development:
 
 ```javascript
 mixpanel.init(MIXPANEL_TOKEN, {
